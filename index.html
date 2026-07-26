@@ -5613,7 +5613,13 @@
 
         // Return if slot is lunch based on division, day, and time slot
         function isLunchSlot(division, day, slot) {
-            return slot === "1:10 to 2:05";
+            if (division === "1") {
+                if (day === "Friday") return slot === "1:10 to 2:05";
+                return slot === "12.10 to 1.05";
+            } else {
+                if (day === "Wednesday" || day === "Friday") return slot === "1:10 to 2:05";
+                return slot === "12.10 to 1.05";
+            }
         }
 
         // Main Refresh Function
@@ -5681,7 +5687,7 @@
                 { start: 655, end: 670, slot: "10:55 to 11:10", isBreak: true, label: "10:55 AM – 11:10 AM" },
                 { start: 670, end: 725, slot: "11.10 to 12.05", label: "11:10 AM – 12:05 PM" },
                 { start: 730, end: 785, slot: "12.10 to 1.05", label: "12:10 PM – 1:05 PM" },
-                { start: 790, end: 845, slot: "1:10 to 2:05", label: "1:10 PM – 2:05 PM" },
+                { start: 790, end: 845, slot: "1:10 to 2:05", isLunch: true, label: "1:10 PM – 2:05 PM" },
                 { start: 850, end: 905, slot: "2.10 to 3.05", label: "2:10 PM – 3:05 PM" },
                 { start: 910, end: 965, slot: "3.10 to 4.05", label: "3:10 PM – 4:05 PM" },
                 { start: 965, end: 975, slot: "4:05 to 4:15", isBreak: true, label: "4:05 PM – 4:15 PM" },
@@ -5753,14 +5759,14 @@
 
             if (activeMatch) {
                 if (activeMatch.isBreak) {
-                    headline.innerHTML = "☕ Short Break Right Now";
+                    headline.innerHTML = "Short Break Right Now";
                     subtext.innerText = `Classes resume shortly at ${activeMatch.end === 670 ? '11:10 AM' : '4:15 PM'}.`;
                     return;
                 }
 
-                if (isLunchSlot(division, todayName, activeMatch.slot)) {
-                    headline.innerHTML = "🍱 Lunch Break Time Right Now";
-                    subtext.innerText = `Enjoy your lunch! Next class starts at ${activeMatch.slot === "12.10 to 1.05" ? '1:10 PM' : '2:10 PM'}.`;
+                if (activeMatch.isLunch) {
+                    headline.innerHTML = "Lunch Break Right Now";
+                    subtext.innerText = "Next class starts at 2:10 PM.";
                     return;
                 }
 
@@ -5826,13 +5832,13 @@
                 { slot: "08:00 to 08:55", start: 480, end: 535, label: "8:00 AM – 8:55 AM" },
                 { slot: "9.00 to 9. 55", start: 540, end: 595, label: "9:00 AM – 9:55 AM" },
                 { slot: "10.00 to 10.55", start: 600, end: 655, label: "10:00 AM – 10:55 AM" },
-                { slot: "10:55 to 11:10", start: 655, end: 670, label: "10:55 AM – 11:10 AM", type: "break" },
+                { slot: "10:55 to 11:10", start: 655, end: 670, label: "10:55 AM – 11:10 AM", breakType: "short" },
                 { slot: "11.10 to 12.05", start: 670, end: 725, label: "11:10 AM – 12:05 PM" },
                 { slot: "12.10 to 1.05", start: 730, end: 785, label: "12:10 PM – 1:05 PM" },
-                { slot: "1:10 to 2:05", start: 790, end: 845, label: "1:10 PM – 2:05 PM", type: "break" }, // Lunch
+                { slot: "1:10 to 2:05", start: 790, end: 845, label: "1:10 PM – 2:05 PM", breakType: "lunch" },
                 { slot: "2.10 to 3.05", start: 850, end: 905, label: "2:10 PM – 3:05 PM" },
                 { slot: "3.10 to 4.05", start: 910, end: 965, label: "3:10 PM – 4:05 PM" },
-                { slot: "4:05 to 4:15", start: 965, end: 975, label: "4:05 PM – 4:15 PM", type: "break" },
+                { slot: "4:05 to 4:15", start: 965, end: 975, label: "4:05 PM – 4:15 PM", breakType: "short" },
                 { slot: "4.15 to 5.10", start: 975, end: 1030, label: "4:15 PM – 5:10 PM" },
                 { slot: "5.15 to 6.10", start: 1035, end: 1090, label: "5:15 PM – 6:10 PM" }
             ];
@@ -5841,37 +5847,21 @@
                 const item = timeSlots[i];
                 const slot = item.slot;
 
-                // Handle Breaks
-                if (item.type === "break") {
+                // Handle Breaks & Lunch
+                if (item.breakType) {
+                    const isLunch = (item.breakType === "lunch");
                     const card = document.createElement("div");
-                    card.className = "mobile-card is-break";
+                    card.className = `mobile-card ${isLunch ? 'is-lunch' : 'is-break'}`;
                     card.innerHTML = `
                         <div class="card-top">
                             <div class="card-time">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                                 ${item.label}
                             </div>
-                            <span class="card-badge" style="background: #e2e8f0; color: var(--text-tertiary);">Short Break</span>
+                            <span class="card-badge" style="${isLunch ? 'background: #ffedd5; color: #c2410c; font-weight: 600;' : 'background: #f1f5f9; color: #475569; font-weight: 600;'}">${isLunch ? 'Lunch Break' : 'Short Break'}</span>
                         </div>
-                    `;
-                    container.appendChild(card);
-                    continue;
-                }
-
-                // Handle Lunch
-                if (isLunchSlot(division, currentDay, slot)) {
-                    const card = document.createElement("div");
-                    card.className = "mobile-card is-lunch";
-                    card.innerHTML = `
-                        <div class="card-top">
-                            <div class="card-time">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                                ${item.label}
-                            </div>
-                            <span class="card-badge" style="background: #ffedd5; color: #c2410c;">🍱 Lunch Break</span>
-                        </div>
-                        <div class="card-title" style="font-size: 1rem; font-weight: 700; color: #475569;">
-                            Dining Hall / Lunch Break Time
+                        <div class="card-title" style="font-size: 0.95rem; font-weight: 700; color: #334155;">
+                            ${isLunch ? 'Lunch Break' : 'Short Break'}
                         </div>
                     `;
                     container.appendChild(card);
