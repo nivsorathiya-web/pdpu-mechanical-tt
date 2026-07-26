@@ -55,7 +55,7 @@
     },
     {
         "roll": "24BME007",
-        "name": "MAYANK HARESHBHAI VAGHASIA",
+        "name": "MAYANK VAGHASIA",
         "div": 1,
         "group": "A1",
         "elective": "Fluid Machinery",
@@ -190,7 +190,7 @@
     },
     {
         "roll": "24BME023",
-        "name": "KUSH DEVANGBHAI PANCHAL",
+        "name": "KUSH PANCHAL",
         "div": 1,
         "group": "A2",
         "elective": "Renewable and Sustainable Energy Technologies",
@@ -226,7 +226,7 @@
     },
     {
         "roll": "24BME027",
-        "name": "PRIYANSHU NAYAN PARMAR",
+        "name": "PARMAR PRIYANSHU NAYAN",
         "div": 1,
         "group": "A2",
         "elective": "Fluid Machinery",
@@ -388,7 +388,7 @@
     },
     {
         "roll": "24BME046",
-        "name": "VANDAN ANAND AGARWAL",
+        "name": "VANDAN AGRAWAL",
         "div": 1,
         "group": "A3",
         "elective": "Fluid Machinery",
@@ -541,7 +541,7 @@
     },
     {
         "roll": "24BME065",
-        "name": "BHARODIYA SOHAM",
+        "name": "BHARODIYA SOHAM RAJNIKANTBHAI",
         "div": 2,
         "group": "A4",
         "elective": "Introduction to Composite Materials",
@@ -595,7 +595,7 @@
     },
     {
         "roll": "24BME071",
-        "name": "SIDDHARTH GORDHANBHAI SOLANKI",
+        "name": "SOLANKI SIDDHARTH GORDHANBHAI",
         "div": 2,
         "group": "A4",
         "elective": "Renewable and Sustainable Energy Technologies",
@@ -685,7 +685,7 @@
     },
     {
         "roll": "24BME082",
-        "name": "FENIL VIVAL LALKIYA",
+        "name": "FENIL VISHAL LALKIYA",
         "div": 2,
         "group": "A4",
         "elective": "Renewable and Sustainable Energy Technologies",
@@ -1063,7 +1063,7 @@
     },
     {
         "roll": "24BME134",
-        "name": "MANN VISHAL VYAS",
+        "name": "VYAS MANN VISHAL",
         "div": 3,
         "group": "A7",
         "elective": "Renewable and Sustainable Energy Technologies",
@@ -1359,6 +1359,15 @@
         "isD2D": false
     },
     {
+        "roll": "24BME168",
+        "name": "MALHAR ALAP MODI",
+        "div": 3,
+        "group": null,
+        "elective": null,
+        "email": "24BME168@sot.pdpu.ac.in",
+        "isD2D": false
+    },
+    {
         "roll": "24BME169",
         "name": "ADITYA GODHANI",
         "div": 3,
@@ -1527,15 +1536,6 @@
         "group": "A9",
         "elective": null,
         "email": "24BME189@sot.pdpu.ac.in",
-        "isD2D": false
-    },
-    {
-        "roll": "24BME168",
-        "name": "MALHAR ALAP MODI",
-        "div": 3,
-        "group": null,
-        "elective": null,
-        "email": "24BME168@sot.pdpu.ac.in",
         "isD2D": false
     },
     {
