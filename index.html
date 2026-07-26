@@ -1152,9 +1152,9 @@
                 </datalist>
             </div>
  
-            <!-- Dynamic Group Selector for D2D Students -->
+            <!-- Dynamic Group Selector for Students Missing a Group (e.g. D2D or Bug Students) -->
             <div id="d2d-group-input-group" class="login-input-group hidden" style="margin-top: 0.75rem; display: none;">
-                <label class="login-input-label" for="login-d2d-group-select" style="color: #ea580c; font-weight: 800;">Select Lab Group (D2D)</label>
+                <label class="login-input-label" for="login-d2d-group-select" style="color: #ea580c; font-weight: 800;">Select Lab Group</label>
                 <select id="login-d2d-group-select" class="login-select-input" onchange="onD2DGroupChange()">
                     <!-- Populated dynamically -->
                 </select>
@@ -5332,8 +5332,8 @@
                 document.getElementById("prev-name").innerText = matched.name;
                 document.getElementById("prev-div").innerText = `Division ${matched.div}`;
                 
-                // Handle D2D dynamic group selection
-                if (matched.isD2D) {
+                // Handle dynamic group selection if student has no pre-defined group
+                if (!matched.group) {
                     d2dGroupGroup.style.display = "flex";
                     
                     // Populate select options based on division
@@ -5400,7 +5400,7 @@
             const roll = btn.dataset.roll;
             const student = studentDatabase.find(s => s.roll === roll);
             if (student) {
-                if (student.isD2D) {
+                if (!student.group) {
                     const group = document.getElementById("login-d2d-group-select").value;
                     if (!group) return;
                     student.group = group;
@@ -5416,7 +5416,7 @@
         function applyStudentProfile(student, isFirstTimeLogin) {
             loggedInStudent = student;
             
-            if (student.isD2D && !student.group) {
+            if (!student.group) {
                 const savedGroup = localStorage.getItem(`d2d_group_${student.roll}`);
                 if (savedGroup) {
                     student.group = savedGroup;
