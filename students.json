@@ -1,0 +1,1506 @@
+[
+    {
+        "roll": "24BME001",
+        "name": "AARSH MITESH MEHTA",
+        "div": 1,
+        "group": "A1",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME002",
+        "name": "SHASHANK MAURYA",
+        "div": 1,
+        "group": "A1",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME003",
+        "name": "DHAIRYA SOHILBHAI SHETH",
+        "div": 1,
+        "group": "A1",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME004",
+        "name": "SNEH RAKESH PATEL",
+        "div": 1,
+        "group": "A1",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME005",
+        "name": "RISHI BHAVESH SHAH",
+        "div": 1,
+        "group": "A1",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME006",
+        "name": "VIDIT MEHUL THAKKAR",
+        "div": 1,
+        "group": "A1",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME007",
+        "name": "MAYANK HARESHBHAI VAGHASIA",
+        "div": 1,
+        "group": "A1",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME008",
+        "name": "RISHI RAJESH THUMMAR",
+        "div": 1,
+        "group": "A1",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME009",
+        "name": "DHRUVRAJSINH VIRENDRASINH ZALA",
+        "div": 1,
+        "group": "A1",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME011",
+        "name": "ADITYA VIKRAM NAYAK",
+        "div": 1,
+        "group": "A1",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME012",
+        "name": "MEVADA JAYDEEP NARESHBHAI",
+        "div": 1,
+        "group": "A1",
+        "elective": null,
+        "isD2D": false
+    },
+    {
+        "roll": "24BME013",
+        "name": "SEVAK DHRUV BHARATKUMAR",
+        "div": 1,
+        "group": "A1",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME014",
+        "name": "VRAJ SANJAY SARAIYA",
+        "div": 1,
+        "group": "A1",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME015",
+        "name": "DEV",
+        "div": 1,
+        "group": "A1",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME016",
+        "name": "KULIN DAXESH DALAL",
+        "div": 1,
+        "group": "A1",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME017",
+        "name": "TANISHQ",
+        "div": 1,
+        "group": "A1",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME018",
+        "name": "BHUVA KRISHAY RAJESHBHAI",
+        "div": 1,
+        "group": "A1",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME019",
+        "name": "MUDIT SRIVASTAVA",
+        "div": 1,
+        "group": "A1",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME020",
+        "name": "RUSHIN ASHISH PANCHAL",
+        "div": 1,
+        "group": "A1",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME021",
+        "name": "KRISH MEHUL CHOKSI",
+        "div": 1,
+        "group": "A1",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME022",
+        "name": "JAY JALDEEP PATEL",
+        "div": 1,
+        "group": "A2",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME023",
+        "name": "KUSH DEVANGBHAI PANCHAL",
+        "div": 1,
+        "group": "A2",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME024",
+        "name": "YUG SNEHALKUMAR PATEL",
+        "div": 1,
+        "group": "A2",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME025",
+        "name": "RUSHIL JAISWAL",
+        "div": 1,
+        "group": "A2",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME026",
+        "name": "DHRUV YOGESH BHAI SATHAVARA",
+        "div": 1,
+        "group": "A2",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME027",
+        "name": "PRIYANSHU NAYAN PARMAR",
+        "div": 1,
+        "group": "A2",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME028",
+        "name": "MANTRA DIGANTKUMAR CHHAYA",
+        "div": 1,
+        "group": "A2",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME029",
+        "name": "JAINISH SAMIR SHAH",
+        "div": 1,
+        "group": "A2",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME030",
+        "name": "IKSHIT GUPTA",
+        "div": 1,
+        "group": "A2",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME031",
+        "name": "HEMIT HARESHKUMAR KANSARA",
+        "div": 1,
+        "group": "A2",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME032",
+        "name": "KEVAL VALLABH ZINZALA",
+        "div": 1,
+        "group": "A2",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME033",
+        "name": "TANISH VELANI",
+        "div": 1,
+        "group": "A2",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME034",
+        "name": "CHAUHAN DEVANSH UTTAMKUMAR",
+        "div": 1,
+        "group": "A2",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME036",
+        "name": "RADADIYA MEET DINESHBHAI",
+        "div": 1,
+        "group": "A2",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME037",
+        "name": "VYAS AADITYA MANISHKUMAR",
+        "div": 1,
+        "group": "A2",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME038",
+        "name": "BHATT DHAIRYA PARESHKUMAR",
+        "div": 1,
+        "group": "A2",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME039",
+        "name": "OM KHETRA",
+        "div": 1,
+        "group": "A2",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME040",
+        "name": "MUKARRAM MOHAMMAD LOKHANDWALA",
+        "div": 1,
+        "group": "A2",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME041",
+        "name": "DHAVAL AHIR",
+        "div": 1,
+        "group": "A2",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME042",
+        "name": "PARMAR BHAVYARAJ BHARATSINH",
+        "div": 1,
+        "group": "A2",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME043",
+        "name": "YASH HIMANSHU MANDIRWALA",
+        "div": 1,
+        "group": "A3",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME044",
+        "name": "MAHIKA BISHT",
+        "div": 1,
+        "group": "A3",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME045",
+        "name": "YUG PRAVINBHAI PATEL",
+        "div": 1,
+        "group": "A3",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME046",
+        "name": "VANDAN ANAND AGARWAL",
+        "div": 1,
+        "group": "A3",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME047",
+        "name": "HARSHIL ASHVINBHAI THUMMAR",
+        "div": 1,
+        "group": "A3",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME048",
+        "name": "JAYNIL VIRAL PATEL",
+        "div": 1,
+        "group": "A3",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME049",
+        "name": "RAMANI YASH KISHORBHAI",
+        "div": 1,
+        "group": "A3",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME051",
+        "name": "KA. PATEL VANSHKUMAR TEJASKUMAR",
+        "div": 1,
+        "group": "A3",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME052",
+        "name": "HARIT JAGDISH MEHTA",
+        "div": 1,
+        "group": "A3",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME053",
+        "name": "ISHMIT SINGH CHADHA",
+        "div": 1,
+        "group": "A3",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME054",
+        "name": "YASHVI SHASHANK MAJMUDAR",
+        "div": 1,
+        "group": "A3",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME055",
+        "name": "AKSHAT HITESH JARIWALA",
+        "div": 1,
+        "group": "A3",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME056",
+        "name": "NIHAR VIRENBHAI SHAH",
+        "div": 1,
+        "group": "A3",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME057",
+        "name": "AADIT SATHEESAN NAIR",
+        "div": 1,
+        "group": "A3",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME059",
+        "name": "MEGH AMIT BHALODIYA",
+        "div": 1,
+        "group": "A3",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME060",
+        "name": "ARIHANT DARSHANBHAI PATEL",
+        "div": 1,
+        "group": "A3",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME061",
+        "name": "KABIRSINH HEMANTSINH MATROJA",
+        "div": 1,
+        "group": "A3",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME062",
+        "name": "JHIL MEHUL MANDAVIA",
+        "div": 1,
+        "group": "A3",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME063",
+        "name": "JILL KAMLESH PARMAR",
+        "div": 1,
+        "group": "A3",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME064",
+        "name": "JAYKUMAR SANJAY PATEL",
+        "div": 2,
+        "group": "A4",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME065",
+        "name": "BHARODIYA SOHAM",
+        "div": 2,
+        "group": "A4",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME066",
+        "name": "BHATT VED SAMIRKUMAR",
+        "div": 2,
+        "group": "A4",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME067",
+        "name": "KRISH RAKESHKUMAR PANDYA",
+        "div": 2,
+        "group": "A4",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME068",
+        "name": "TIRTH DHAVAL MEHTA",
+        "div": 2,
+        "group": "A4",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME069",
+        "name": "SHLOK ABHISHEK GOYAL",
+        "div": 2,
+        "group": "A4",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME070",
+        "name": "NILANSHU JIGNESHBHAI SHAH",
+        "div": 2,
+        "group": "A4",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME071",
+        "name": "SIDDHARTH GORDHANBHAI SOLANKI",
+        "div": 2,
+        "group": "A4",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME073",
+        "name": "HIMADRI BIRENDER ARJARIYA",
+        "div": 2,
+        "group": "A4",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME074",
+        "name": "DHRUV VINODBHAI ASODARIYA",
+        "div": 2,
+        "group": "A4",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME075",
+        "name": "DHYAAN DAVE",
+        "div": 2,
+        "group": "A4",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME076",
+        "name": "PATEL PARITA JAYESHKUMAR",
+        "div": 2,
+        "group": "A4",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME077",
+        "name": "JAYRAJ BRAHMBHATT",
+        "div": 2,
+        "group": "A4",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME078",
+        "name": "HRISHIT N SOLANKI",
+        "div": 2,
+        "group": "A4",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME079",
+        "name": "RISHIT CHAITANYA SALASIYA",
+        "div": 2,
+        "group": "A4",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME080",
+        "name": "TUSHAR ARVINDBHAI MAHIDA",
+        "div": 2,
+        "group": "A4",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME081",
+        "name": "KUSH ANAND VYAS",
+        "div": 2,
+        "group": "A4",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME082",
+        "name": "FENIL VIVAL LALKIYA",
+        "div": 2,
+        "group": "A4",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME083",
+        "name": "HETANSH HEMANTKUMAR PATEL",
+        "div": 2,
+        "group": "A4",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME085",
+        "name": "KUSHAGRA PRAGNESHKUMAR PATEL",
+        "div": 2,
+        "group": "A5",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME086",
+        "name": "VANZA HIMESHBHAI JAGUBHAI",
+        "div": 2,
+        "group": "A5",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME087",
+        "name": "PATEL VANSH YASH",
+        "div": 2,
+        "group": "A5",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME088",
+        "name": "HARSH NALIYAPARA",
+        "div": 2,
+        "group": "A5",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME089",
+        "name": "MEGH",
+        "div": 2,
+        "group": "A5",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME090",
+        "name": "ANKUR DHARMENDRAKUMAR CHATURVEDI",
+        "div": 2,
+        "group": "A5",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME091",
+        "name": "RAJ YAGNESH PANDYA",
+        "div": 2,
+        "group": "A5",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME093",
+        "name": "TEJTHUMAR HARSUKHBHAI THUMAR",
+        "div": 2,
+        "group": "A5",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME094",
+        "name": "NISHCHAY SHARMA",
+        "div": 2,
+        "group": "A5",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME095",
+        "name": "HEET RAKESH BHAI TRIVEDI",
+        "div": 2,
+        "group": "A5",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME096",
+        "name": "PARTH ARVINDGIRI APARNATHI",
+        "div": 2,
+        "group": "A5",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME097",
+        "name": "DHYANA UPESH SHAH",
+        "div": 2,
+        "group": "A5",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME098",
+        "name": "SOUMYA PRADHAN",
+        "div": 2,
+        "group": "A5",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME100",
+        "name": "SIDDHARTH ROUT",
+        "div": 2,
+        "group": "A5",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME101",
+        "name": "AADITYA PAJNI",
+        "div": 2,
+        "group": "A5",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME102",
+        "name": "AJAYSINH NARPATSINH JADEJA",
+        "div": 2,
+        "group": "A5",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME104",
+        "name": "PATEL MERIKKUMAR JAYESHKUMAR",
+        "div": 2,
+        "group": "A5",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME105",
+        "name": "DEEPAN APURVA SHAH",
+        "div": 2,
+        "group": "A5",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME106",
+        "name": "NIKET NITHESH KOLLAMKULANGARA",
+        "div": 2,
+        "group": "A5",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME107",
+        "name": "DARSHAN PARESHBHAI LOHAR",
+        "div": 2,
+        "group": "A6",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME110",
+        "name": "PAMNANI VEDANT KIRAN",
+        "div": 2,
+        "group": "A6",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME112",
+        "name": "PRAYAG PATEL",
+        "div": 2,
+        "group": "A6",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME113",
+        "name": "SOHAM",
+        "div": 2,
+        "group": "A6",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME114",
+        "name": "SAVALIYA JEEL VINODBHAI",
+        "div": 2,
+        "group": "A6",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME115",
+        "name": "SANKLA ARYAN DILIP",
+        "div": 2,
+        "group": "A6",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME116",
+        "name": "VAGHAMSHI MANTRAKUMAR AMARISHBHAI",
+        "div": 2,
+        "group": "A6",
+        "elective": null,
+        "isD2D": false
+    },
+    {
+        "roll": "24BME117",
+        "name": "KRISH SHIVKUMAR JAISWAL",
+        "div": 2,
+        "group": "A6",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME118",
+        "name": "VARUN SHERSIA",
+        "div": 2,
+        "group": "A6",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME121",
+        "name": "SHUBHANG YALGURESH KULKARNI",
+        "div": 2,
+        "group": "A6",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME122",
+        "name": "KHUSHVI CHIRAG SHAH",
+        "div": 2,
+        "group": "A6",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME123",
+        "name": "BHAVYA PINANK SHAH",
+        "div": 2,
+        "group": "A6",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME124",
+        "name": "PATEL DHYAN CHIRAGKUMAR",
+        "div": 2,
+        "group": "A6",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME126",
+        "name": "DHIRAJ GOSWAMI",
+        "div": 2,
+        "group": "A6",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME127",
+        "name": "DEVDATTA ANIL INGOLE",
+        "div": 2,
+        "group": "A6",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME128",
+        "name": "DHYEY MEHULKUMAR MAKWANA",
+        "div": 2,
+        "group": "A6",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME129",
+        "name": "MANAN MUKESHBHAI DHANDHUKIA",
+        "div": 2,
+        "group": "A6",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME130",
+        "name": "EPARI ADARSH PATRO",
+        "div": 3,
+        "group": "A7",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME131",
+        "name": "ANSHUL MEHTA",
+        "div": 3,
+        "group": "A7",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME132",
+        "name": "ZAID ASHFAQ RATHOD",
+        "div": 3,
+        "group": "A7",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME133",
+        "name": "HARSHIL MAHENDRABHAI KATARIA",
+        "div": 3,
+        "group": "A7",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME134",
+        "name": "MANN VISHAL VYAS",
+        "div": 3,
+        "group": "A7",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME135",
+        "name": "SHLOK MANISH GAJJAR",
+        "div": 3,
+        "group": "A7",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME136",
+        "name": "RAVISHNU NITESHKUMAR PANCHAL",
+        "div": 3,
+        "group": "A7",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME138",
+        "name": "HET DILIPBHAI THAKKAR",
+        "div": 3,
+        "group": "A7",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME139",
+        "name": "DEVAM ACHARYA",
+        "div": 3,
+        "group": "A7",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME140",
+        "name": "NISHTHA PRAHALAD MAKANI",
+        "div": 3,
+        "group": "A7",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME141",
+        "name": "TIRTH CHAROLA",
+        "div": 3,
+        "group": "A7",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME142",
+        "name": "NEEV TUSHAR KANSARA",
+        "div": 3,
+        "group": "A7",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME143",
+        "name": "MUSTANSIR HUSENI GHADIYALI",
+        "div": 3,
+        "group": "A7",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME144",
+        "name": "JEET RAJESHBHAI SIDPARA",
+        "div": 3,
+        "group": "A7",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME145",
+        "name": "SHIVANSH CHOKSHI",
+        "div": 3,
+        "group": "A7",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME146",
+        "name": "OM DEVESH TRIVEDI",
+        "div": 3,
+        "group": "A7",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME147",
+        "name": "HARIVANSH DARSHAN SOLANKI",
+        "div": 3,
+        "group": "A7",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME148",
+        "name": "JAYVARDHANSINH YASHPALSINH CHUDASAMA",
+        "div": 3,
+        "group": "A7",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME149",
+        "name": "DHAIRYA VIPUL SHAH",
+        "div": 3,
+        "group": "A7",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME150",
+        "name": "HRISHIKESH RAJESHBHAI KATHIRIYA",
+        "div": 3,
+        "group": "A8",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME151",
+        "name": "AYUSH DODIA",
+        "div": 3,
+        "group": "A8",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME152",
+        "name": "MANTRA SASANI",
+        "div": 3,
+        "group": "A8",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME153",
+        "name": "RUDRA ROHITKUMAR RAVAL",
+        "div": 3,
+        "group": "A8",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME154",
+        "name": "SHREENIDHI ARVINDBHAI DHAMELIYA",
+        "div": 3,
+        "group": "A8",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME155",
+        "name": "VAGHASIYA NISARG KIRTIBHAI",
+        "div": 3,
+        "group": "A8",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME156",
+        "name": "AHAD ASFAK PILUDIYA",
+        "div": 3,
+        "group": "A8",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME157",
+        "name": "VIKAS KEWLANI",
+        "div": 3,
+        "group": "A8",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME158",
+        "name": "KHUSHALI UMESHBHAI VYAS",
+        "div": 3,
+        "group": "A8",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME159",
+        "name": "MOHIT JATINBHAI PANCHAL",
+        "div": 3,
+        "group": "A8",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME160",
+        "name": "KALASH KINJALKUMAR SHAH",
+        "div": 3,
+        "group": "A8",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME161",
+        "name": "PRANJAL VISHVESH BADHEKA",
+        "div": 3,
+        "group": "A8",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME162",
+        "name": "KATHAN VIKAS VAKHARIA",
+        "div": 3,
+        "group": "A8",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME163",
+        "name": "DEV JIGNESH PATEL",
+        "div": 3,
+        "group": "A8",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME164",
+        "name": "DHRUVISH NIRAL SHAH",
+        "div": 3,
+        "group": "A8",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME165",
+        "name": "PATEL MANN JAGADISHKUMAR",
+        "div": 3,
+        "group": "A8",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME166",
+        "name": "KRISH BIPINBHAI VAISHNANI",
+        "div": 3,
+        "group": "A8",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME167",
+        "name": "HEMAL RAJESHBHAI MERJA",
+        "div": 3,
+        "group": "A8",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME169",
+        "name": "ADITYA GODHANI",
+        "div": 3,
+        "group": "A8",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME170",
+        "name": "HUGO ADELINO JO\u00c3O NHAULE",
+        "div": 3,
+        "group": "A9",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME171",
+        "name": "JOS\u00c9 AFONSO BILA",
+        "div": 3,
+        "group": "A9",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME172",
+        "name": "FRANCISCO YASSINE MAMBIRISSE",
+        "div": 3,
+        "group": "A9",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME173",
+        "name": "JOS\u00c9 LU\u00cdS ANT\u00d3NIO CELESTE",
+        "div": 3,
+        "group": "A9",
+        "elective": null,
+        "isD2D": false
+    },
+    {
+        "roll": "24BME175",
+        "name": "BRIJESH PANDIT",
+        "div": 3,
+        "group": "A9",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME177",
+        "name": "DHAIRYA CHAUDHARI",
+        "div": 3,
+        "group": "A9",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME178",
+        "name": "RADADIYA PRAYAG KAMLESHBHAI",
+        "div": 3,
+        "group": "A9",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME179",
+        "name": "PANCHANI NEVIL ANISHBHAI",
+        "div": 3,
+        "group": "A9",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME180",
+        "name": "RAWAL VYOM SANDEEP",
+        "div": 3,
+        "group": "A9",
+        "elective": "Introduction to Composite Materials",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME181",
+        "name": "KRUTARTH DINESH OZA",
+        "div": 3,
+        "group": "A9",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME182",
+        "name": "CHAVDA ANIKETKUMAR SURESHBHAI",
+        "div": 3,
+        "group": "A9",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME183",
+        "name": "NEEL NILESHBHAI RUDANI",
+        "div": 3,
+        "group": "A9",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME184",
+        "name": "PRAJAPATI HARITKUMAR MAHESHBHAI",
+        "div": 3,
+        "group": "A9",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME185",
+        "name": "SOLANKI JALPAN SURESHBHAI",
+        "div": 3,
+        "group": "A9",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME186",
+        "name": "VASU ASHVINKUMAR VEKARIYA",
+        "div": 3,
+        "group": "A9",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME187",
+        "name": "PRISHA GOSWAMI",
+        "div": 1,
+        "group": "A3",
+        "elective": "Fluid Machinery",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME188",
+        "name": "ROHAN K P",
+        "div": 3,
+        "group": "A9",
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": false
+    },
+    {
+        "roll": "24BME189",
+        "name": "BIJAY KUMAR MANDAL",
+        "div": 3,
+        "group": "A9",
+        "elective": null,
+        "isD2D": false
+    },
+    {
+        "roll": "24BME168",
+        "name": "MALHAR ALAP MODI",
+        "div": 3,
+        "group": null,
+        "elective": null,
+        "isD2D": false
+    },
+    {
+        "roll": "24BME191D",
+        "name": "RANA DEV SHILPESH",
+        "div": 1,
+        "group": null,
+        "elective": "Fluid Machinery",
+        "isD2D": true
+    },
+    {
+        "roll": "24BME192D",
+        "name": "CHAUHAN TARUN HASMUKHBHAI",
+        "div": 2,
+        "group": null,
+        "elective": "Fluid Machinery",
+        "isD2D": true
+    },
+    {
+        "roll": "24BME193D",
+        "name": "SINOJIYA NANDAN TARUNKUMAR",
+        "div": 2,
+        "group": null,
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": true
+    },
+    {
+        "roll": "24BME194D",
+        "name": "SONEJI KUSH JATINBHAI",
+        "div": 2,
+        "group": null,
+        "elective": "Introduction to Composite Materials",
+        "isD2D": true
+    },
+    {
+        "roll": "24BME195D",
+        "name": "BALDANIYA BHAGIRATH KISHORBHAI",
+        "div": 1,
+        "group": null,
+        "elective": "Introduction to Composite Materials",
+        "isD2D": true
+    },
+    {
+        "roll": "24BME197D",
+        "name": "PAREKH YUG SAUNAK",
+        "div": 3,
+        "group": null,
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": true
+    },
+    {
+        "roll": "24BME198D",
+        "name": "SHINGADIYA ANKUSH VIJAYBHAI",
+        "div": 3,
+        "group": null,
+        "elective": "Introduction to Composite Materials",
+        "isD2D": true
+    },
+    {
+        "roll": "24BME199D",
+        "name": "NEEL DEPANI",
+        "div": 3,
+        "group": null,
+        "elective": "Introduction to Composite Materials",
+        "isD2D": true
+    },
+    {
+        "roll": "24BME200D",
+        "name": "RAVAL SARVAGNA DHRUVKUMAR",
+        "div": 3,
+        "group": null,
+        "elective": "Introduction to Composite Materials",
+        "isD2D": true
+    },
+    {
+        "roll": "24BME201D",
+        "name": "PITRODA DHRUV CHETANKUMAR",
+        "div": 3,
+        "group": null,
+        "elective": "Introduction to Composite Materials",
+        "isD2D": true
+    },
+    {
+        "roll": "24BME202D",
+        "name": "NANDISH NITIN PUROHIT",
+        "div": 1,
+        "group": null,
+        "elective": "Introduction to Composite Materials",
+        "isD2D": true
+    },
+    {
+        "roll": "24BME203D",
+        "name": "DAVE SHYAM HIMANSHUBHAI",
+        "div": 2,
+        "group": null,
+        "elective": "Introduction to Composite Materials",
+        "isD2D": true
+    },
+    {
+        "roll": "24BME204D",
+        "name": "HERIK RAKESH PATEL",
+        "div": 1,
+        "group": null,
+        "elective": "Introduction to Composite Materials",
+        "isD2D": true
+    },
+    {
+        "roll": "24BME205D",
+        "name": "VRUSHIN PANCHAL",
+        "div": 1,
+        "group": null,
+        "elective": "Introduction to Composite Materials",
+        "isD2D": true
+    },
+    {
+        "roll": "24BME206D",
+        "name": "SHAH DARSHIT",
+        "div": 2,
+        "group": null,
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": true
+    },
+    {
+        "roll": "24BME207D",
+        "name": "HRUSHABH PANCHAL",
+        "div": 2,
+        "group": null,
+        "elective": "Introduction to Composite Materials",
+        "isD2D": true
+    },
+    {
+        "roll": "24BME208D",
+        "name": "SOLANKI SMIT ARVIND",
+        "div": 2,
+        "group": null,
+        "elective": "Renewable and Sustainable Energy Technologies",
+        "isD2D": true
+    }
+]

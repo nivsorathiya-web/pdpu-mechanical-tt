@@ -1,0 +1,4079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Mechanical Engineering Timetable Portal</title>
+    
+    <!-- PWA Metadata -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Mech Timetable">
+    <meta name="application-name" content="Mech Timetable">
+    <meta name="theme-color" content="#ea580c">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- SVG App Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23ea580c'/%3E%3Cstop offset='100%25' stop-color='%23f59e0b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='180' height='180' rx='40' fill='url(%23bg)'/%3E%3Cpath d='M90 40a50 50 0 1 0 0 100 50 50 0 0 0 0-100zm0 15a35 35 0 1 1 0 70 35 35 0 0 1 0-70z' fill='%23ffffff' fill-opacity='0.2'/%3E%3Cpath d='M90 65a25 25 0 1 0 0 50 25 25 0 0 0 0-50zm0 10a15 15 0 1 1 0 30 15 15 0 0 1 0-30z' fill='%23ffffff'/%3E%3Cpath d='M90 30v15M90 135v15M30 90h15M135 90h15M47.6 47.6l10.6 10.6M121.8 121.8l10.6 10.6M47.6 132.4l10.6-10.6M121.8 58.2l10.6-10.6' stroke='%23ffffff' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23ea580c'/%3E%3Cstop offset='100%25' stop-color='%23f59e0b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='180' height='180' rx='40' fill='url(%23bg)'/%3E%3Cpath d='M90 40a50 50 0 1 0 0 100 50 50 0 0 0 0-100zm0 15a35 35 0 1 1 0 70 35 35 0 0 1 0-70z' fill='%23ffffff' fill-opacity='0.2'/%3E%3Cpath d='M90 65a25 25 0 1 0 0 50 25 25 0 0 0 0-50zm0 10a15 15 0 1 1 0 30 15 15 0 0 1 0-30z' fill='%23ffffff'/%3E%3Cpath d='M90 30v15M90 135v15M30 90h15M135 90h15M47.6 47.6l10.6 10.6M121.8 121.8l10.6 10.6M47.6 132.4l10.6-10.6M121.8 58.2l10.6-10.6' stroke='%23ffffff' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E">
+
+    <style>
+        /* Modern Premium Dark Theme (Industrial Slate & Amber Design System) */
+        :root {
+            --font-primary: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-secondary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            --bg-body: #0b0f19;
+            --bg-surface: #111827;
+            --bg-card: #1f2937;
+            --bg-card-hover: #374151;
+            --border-color: #2d3748;
+            --border-highlight: rgba(234, 88, 12, 0.4);
+            
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-tertiary: #64748b;
+            
+            --accent-primary: #ea580c;
+            --accent-glow: linear-gradient(135deg, #ea580c 0%, #f59e0b 100%);
+            --accent-gradient: linear-gradient(90deg, #ea580c, #f97316, #fbbf24);
+            
+            /* Subject Theme Badges */
+            --color-ht-bg: rgba(239, 68, 68, 0.15);
+            --color-ht-text: #ef4444;
+            --color-ht-border: rgba(239, 68, 68, 0.3);
+            
+            --color-dom-bg: rgba(148, 163, 184, 0.15);
+            --color-dom-text: #cbd5e1;
+            --color-dom-border: rgba(148, 163, 184, 0.3);
+            
+            --color-mp-bg: rgba(34, 197, 94, 0.15);
+            --color-mp-text: #4be080;
+            --color-mp-border: rgba(34, 197, 94, 0.3);
+            
+            --color-eco-bg: rgba(16, 185, 129, 0.15);
+            --color-eco-text: #34d399;
+            --color-eco-border: rgba(16, 185, 129, 0.3);
+            
+            --color-el1-bg: rgba(6, 182, 212, 0.15);
+            --color-el1-text: #22d3ee;
+            --color-el1-border: rgba(6, 182, 212, 0.3);
+            
+            --color-el2-bg: rgba(147, 51, 234, 0.15);
+            --color-el2-text: #c084fc;
+            --color-el2-border: rgba(147, 51, 234, 0.3);
+            
+            --color-cdc-bg: rgba(107, 114, 128, 0.15);
+            --color-cdc-text: #d1d5db;
+            --color-cdc-border: rgba(107, 114, 128, 0.3);
+
+            --safe-top: env(safe-area-inset-top, 0px);
+            --safe-bottom: env(safe-area-inset-bottom, 0px);
+        }
+
+        /* Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            padding-top: var(--safe-top);
+            padding-bottom: calc(var(--safe-bottom) + 85px);
+        }
+
+        /* Splash Screen */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(135deg, #0b0f19 0%, #111827 100%);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.25rem;
+            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s;
+        }
+
+        #splash-screen.fade-out {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .splash-logo {
+            width: 90px;
+            height: 90px;
+            border-radius: 24px;
+            background: var(--accent-glow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 35px rgba(234, 88, 12, 0.35);
+            animation: splashScale 1.2s cubic-bezier(0.16, 1, 0.3, 1) infinite alternate;
+        }
+
+        .splash-logo svg {
+            width: 48px;
+            height: 48px;
+            fill: #ffffff;
+            animation: gearRotate 4s linear infinite;
+        }
+
+        @keyframes gearRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes splashScale {
+            0% { transform: scale(0.95); box-shadow: 0 10px 25px rgba(234, 88, 12, 0.2); }
+            100% { transform: scale(1.05); box-shadow: 0 20px 45px rgba(234, 88, 12, 0.4); }
+        }
+
+        .splash-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        /* App Shell Layout */
+        .app-header {
+            width: 100%;
+            max-width: 540px;
+            padding: 1.25rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-title {
+            font-size: 1.45rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .brand-sub {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-tertiary);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-top: 0.1rem;
+        }
+
+        .profile-btn {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.6rem;
+            border-radius: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        .profile-btn:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-1px);
+        }
+
+        /* Container */
+        .main-container {
+            width: 100%;
+            max-width: 540px;
+            padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        /* Clock Card */
+        .status-card {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+            border-radius: 24px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .status-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .time-display {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            font-family: var(--font-primary);
+            color: var(--text-primary);
+        }
+
+        .date-display {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-top: 0.15rem;
+        }
+
+        .greeting-text {
+            font-size: 1.15rem;
+            font-weight: 750;
+            color: #f59e0b;
+            text-shadow: 0 0 15px rgba(245, 158, 11, 0.1);
+        }
+
+        /* Next Class Widget */
+        .next-class-widget {
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        .next-class-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-tertiary);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+        }
+
+        .next-class-details {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .next-class-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .next-class-time {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Horizontal Centering Day Chips Selector */
+        .day-scroller {
+            width: 100%;
+            overflow-x: auto;
+            scrollbar-width: none; /* Firefox */
+            padding: 0.2rem 0;
+        }
+
+        .day-scroller::-webkit-scrollbar {
+            display: none; /* Safari / Chrome */
+        }
+
+        .day-chips-container {
+            display: flex;
+            gap: 0.75rem;
+            padding: 0 0.1rem;
+        }
+
+        .day-chip {
+            flex: 0 0 auto;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            padding: 0.75rem 1.25rem;
+            border-radius: 18px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 80px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+        .day-chip.active {
+            background: var(--accent-glow);
+            border-color: transparent;
+            box-shadow: 0 8px 20px -4px rgba(234, 88, 12, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .day-abbr {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .day-chip.active .day-abbr {
+            color: #ffffff;
+        }
+
+        .day-sub {
+            font-size: 0.68rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-top: 0.15rem;
+        }
+
+        .day-chip.active .day-sub {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .today-badge-pill {
+            position: absolute;
+            top: -6px;
+            background: #22c55e;
+            color: #ffffff;
+            font-size: 0.55rem;
+            font-weight: 800;
+            padding: 0.1rem 0.35rem;
+            border-radius: 6px;
+            border: 1px solid #16a34a;
+            display: none;
+        }
+
+        .day-chip.is-today .today-badge-pill {
+            display: block;
+        }
+
+        /* Mobile Timeline Card Schedule Container */
+        .timeline-view {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        /* Mobile Card Style */
+        .mobile-card {
+            background: var(--bg-surface);
+            border-radius: 20px;
+            padding: 1.25rem;
+            border: 1px solid var(--border-color);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            box-shadow: 0 8px 16px -4px rgba(0,0,0,0.2);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .mobile-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--border-highlight);
+        }
+
+        /* Glowing Amber Pulsing Border for Active Class */
+        .mobile-card.is-currently-active {
+            animation: pulse-border-glow 2.5s infinite alternate;
+        }
+
+        @keyframes pulse-border-glow {
+            0% {
+                border-color: var(--border-color);
+                box-shadow: 0 8px 16px -4px rgba(0,0,0,0.2);
+            }
+            100% {
+                border-color: #ea580c;
+                box-shadow: 0 0 15px rgba(234, 88, 12, 0.3), 0 8px 20px -4px rgba(234, 88, 12, 0.2);
+            }
+        }
+
+        .card-left-bar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: var(--border-color);
+        }
+
+        .mobile-card.ht .card-left-bar { background: var(--color-ht-text); }
+        .mobile-card.dom .card-left-bar { background: var(--color-dom-text); }
+        .mobile-card.mp .card-left-bar { background: var(--color-mp-text); }
+        .mobile-card.eco .card-left-bar { background: var(--color-eco-text); }
+        .mobile-card.el1 .card-left-bar { background: var(--color-el1-text); }
+        .mobile-card.el2 .card-left-bar { background: var(--color-el2-text); }
+        .mobile-card.cdc .card-left-bar { background: var(--color-cdc-text); }
+
+        .card-time-slot {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            font-family: var(--font-secondary);
+            letter-spacing: 0.02em;
+        }
+
+        .card-subject-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .card-subject-name {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+            line-height: 1.25;
+        }
+
+        .card-subject-code {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--text-tertiary);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            background: var(--bg-body);
+            padding: 0.15rem 0.45rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            margin-top: 0.15rem;
+        }
+
+        .card-badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .badge-pill {
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.55rem;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            border: 1px solid transparent;
+        }
+
+        /* Category Specific Badges */
+        .mobile-card.ht .badge-pill.cat {
+            background-color: var(--color-ht-bg);
+            color: var(--color-ht-text);
+            border-color: var(--color-ht-border);
+        }
+        .mobile-card.dom .badge-pill.cat {
+            background-color: var(--color-dom-bg);
+            color: var(--color-dom-text);
+            border-color: var(--color-dom-border);
+        }
+        .mobile-card.mp .badge-pill.cat {
+            background-color: var(--color-mp-bg);
+            color: var(--color-mp-text);
+            border-color: var(--color-mp-border);
+        }
+        .mobile-card.eco .badge-pill.cat {
+            background-color: var(--color-eco-bg);
+            color: var(--color-eco-text);
+            border-color: var(--color-eco-border);
+        }
+        .mobile-card.el1 .badge-pill.cat {
+            background-color: var(--color-el1-bg);
+            color: var(--color-el1-text);
+            border-color: var(--color-el1-border);
+        }
+        .mobile-card.el2 .badge-pill.cat {
+            background-color: var(--color-el2-bg);
+            color: var(--color-el2-text);
+            border-color: var(--color-el2-border);
+        }
+        .mobile-card.cdc .badge-pill.cat {
+            background-color: var(--color-cdc-bg);
+            color: var(--color-cdc-text);
+            border-color: var(--color-cdc-border);
+        }
+
+        .badge-pill.room {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: #60a5fa;
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+
+        .badge-pill.faculty {
+            background-color: rgba(167, 139, 250, 0.1);
+            color: #c084fc;
+            border-color: rgba(167, 139, 250, 0.2);
+        }
+
+        /* Live Indicator Badge (bottom-right inside active card) */
+        .live-indicator-badge {
+            align-self: flex-end;
+            margin-top: 0.1rem;
+            background: rgba(34, 197, 94, 0.15);
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 0.25rem 0.6rem;
+            border-radius: 8px;
+            letter-spacing: 0.05em;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .live-pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #22c55e;
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse-dot 1.5s infinite alternate;
+        }
+
+        @keyframes pulse-dot {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            100% { transform: scale(1.25); opacity: 1; }
+        }
+
+        /* Breaks (Recess, Lunch) Styling */
+        .mobile-card.is-break {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            border-style: dashed;
+            gap: 0.25rem;
+            padding: 1rem 1.25rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-card.is-break .card-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Profile Sidebar Drawer overlay */
+        .drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .drawer-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .drawer-content {
+            position: fixed;
+            top: 0;
+            right: -320px;
+            width: 320px;
+            height: 100vh;
+            background: var(--bg-surface);
+            box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+            z-index: 1001;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border-left: 1px solid var(--border-color);
+        }
+
+        .drawer-overlay.open + .drawer-content {
+            right: 0;
+        }
+
+        .drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .drawer-close-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+
+        .drawer-profile-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+        }
+
+        .profile-drawer-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .profile-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .field-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .field-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .switch-profile-btn {
+            margin-top: auto;
+            background: var(--accent-glow);
+            border: none;
+            color: #ffffff;
+            font-weight: 700;
+            padding: 0.85rem;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+        }
+
+        .switch-profile-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(234, 88, 12, 0.35);
+        }
+
+        /* Login Screen Modal Container */
+        .login-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(135deg, #0b0f19 0%, #111827 100%);
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .login-modal {
+            background: var(--bg-surface);
+            border-radius: 28px;
+            padding: 2.25rem;
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .login-logo {
+            width: 65px;
+            height: 65px;
+            border-radius: 18px;
+            background: var(--accent-glow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .login-logo svg {
+            width: 32px;
+            height: 32px;
+            fill: #ffffff;
+            animation: gearRotate 8s linear infinite;
+        }
+
+        .login-title-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .login-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .login-sub {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.45;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .login-input {
+            width: 100%;
+            background: var(--bg-body);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.9rem 1.1rem;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: var(--font-secondary);
+            text-align: center;
+            text-transform: uppercase;
+            transition: border-color 0.2s ease;
+        }
+
+        .login-input:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+        }
+
+        /* D2D Group Selection Selector block */
+        .d2d-container {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            text-align: left;
+        }
+
+        .d2d-container.show {
+            max-height: 150px;
+            opacity: 1;
+            padding: 0.25rem 0;
+        }
+
+        .d2d-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #fbbf24;
+            letter-spacing: 0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .d2d-select {
+            width: 100%;
+            background: var(--bg-body);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.85rem 1rem;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .d2d-select:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .login-submit-btn {
+            background: var(--accent-glow);
+            border: none;
+            color: #ffffff;
+            font-weight: 700;
+            padding: 0.9rem;
+            border-radius: 14px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(234, 88, 12, 0.2);
+        }
+
+        .login-submit-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(234, 88, 12, 0.35);
+        }
+
+        .login-error {
+            color: #ef4444;
+            font-size: 0.82rem;
+            font-weight: 600;
+            min-height: 1.25rem;
+        }
+
+        /* Mobile Badge Stacking rules on narrow viewports */
+        @media (max-width: 480px) {
+            .card-badge-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.4rem;
+            }
+            .badge-pill {
+                width: 100%;
+                justify-content: flex-start;
+            }
+            .status-card {
+                padding: 1.25rem;
+            }
+            .login-modal {
+                padding: 1.75rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div class="splash-logo">
+            <svg viewBox="0 0 24 24">
+                <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+            </svg>
+        </div>
+        <div class="splash-title">MECHANICAL ENGINEERING</div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-screen" class="login-overlay">
+        <div class="login-modal">
+            <div class="login-logo">
+                <svg viewBox="0 0 24 24">
+                    <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+                </svg>
+            </div>
+            <div class="login-title-row">
+                <div class="login-title">Student Login</div>
+                <div class="login-sub">Enter your Mechanical Roll Number (e.g., 24BME001) to load your custom timetable profile.</div>
+            </div>
+            <div class="login-form">
+                <input type="text" id="roll-number-input" class="login-input" placeholder="Enter Roll Number" autocomplete="off" autofocus>
+                
+                <!-- D2D Group Selection -->
+                <div id="d2d-group-container" class="d2d-container">
+                    <div class="d2d-label">
+                        ⚠️ D2D Student — Select Lab Group
+                    </div>
+                    <select id="d2d-group-select" class="d2d-select">
+                        <!-- Populated dynamically -->
+                    </select>
+                </div>
+
+                <button class="login-submit-btn" onclick="submitLogin()">Access Timetable</button>
+                <div id="login-error-message" class="login-error"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- App Header -->
+    <header class="app-header">
+        <div>
+            <h1 class="brand-title">ME Timetable</h1>
+            <div class="brand-sub">Mechanical Engineering</div>
+        </div>
+        <button class="profile-btn" onclick="toggleDrawer(true)">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/>
+            </svg>
+        </button>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Status Box -->
+        <section class="status-card">
+            <div class="status-header">
+                <div>
+                    <div id="greeting" class="greeting-text">Good Morning!</div>
+                    <div id="current-date" class="date-display">Sunday, July 26</div>
+                </div>
+                <div id="current-time" class="time-display">08:00 AM</div>
+            </div>
+            
+            <!-- Next Class Widget -->
+            <div id="next-class-box" class="next-class-widget" style="display: none;">
+                <div class="next-class-label">Next Class</div>
+                <div class="next-class-details">
+                    <div class="next-class-info">
+                        <span id="next-class-name">Dynamics of Machine</span>
+                        <span id="next-class-meta" class="card-subject-code">24ME302T</span>
+                    </div>
+                    <span id="next-class-time" class="next-class-time">9:00 AM – 9:55 AM</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Day Selector Chips Navigation -->
+        <section class="day-scroller">
+            <nav id="day-chips-container" class="day-chips-container">
+                <button class="day-chip" id="chip-Monday" onclick="selectDay('Monday')">
+                    <span class="today-badge-pill">TODAY</span>
+                    <span class="day-abbr">MON</span>
+                    <span class="day-sub">Monday</span>
+                </button>
+                <button class="day-chip" id="chip-Tuesday" onclick="selectDay('Tuesday')">
+                    <span class="today-badge-pill">TODAY</span>
+                    <span class="day-abbr">TUE</span>
+                    <span class="day-sub">Tuesday</span>
+                </button>
+                <button class="day-chip" id="chip-Wednesday" onclick="selectDay('Wednesday')">
+                    <span class="today-badge-pill">TODAY</span>
+                    <span class="day-abbr">WED</span>
+                    <span class="day-sub">Wednesday</span>
+                </button>
+                <button class="day-chip" id="chip-Thursday" onclick="selectDay('Thursday')">
+                    <span class="today-badge-pill">TODAY</span>
+                    <span class="day-abbr">THU</span>
+                    <span class="day-sub">Thursday</span>
+                </button>
+                <button class="day-chip" id="chip-Friday" onclick="selectDay('Friday')">
+                    <span class="today-badge-pill">TODAY</span>
+                    <span class="day-abbr">FRI</span>
+                    <span class="day-sub">Friday</span>
+                </button>
+                <button class="day-chip" id="chip-Saturday" onclick="selectDay('Saturday')">
+                    <span class="today-badge-pill">TODAY</span>
+                    <span class="day-abbr">SAT</span>
+                    <span class="day-sub">Saturday</span>
+                </button>
+            </nav>
+        </section>
+
+        <!-- Mobile Timeline Card Schedule Container -->
+        <main class="timeline-view" id="mobile-cards-view">
+            <!-- Populated dynamically via JS -->
+        </main>
+    </div>
+
+    <!-- Drawer Overlay and Sidebar Drawer -->
+    <div id="drawer-overlay" class="drawer-overlay" onclick="toggleDrawer(false)"></div>
+    <div id="profile-drawer" class="drawer-content">
+        <div class="drawer-header">
+            <h2 class="drawer-profile-title">Student Profile</h2>
+            <button class="drawer-close-btn" onclick="toggleDrawer(false)">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <div class="profile-drawer-info">
+            <div class="profile-field">
+                <span class="field-label">Full Name</span>
+                <span id="profile-name-val" class="field-value">-</span>
+            </div>
+            <div class="profile-field">
+                <span class="field-label">Roll Number</span>
+                <span id="profile-roll-val" class="field-value">-</span>
+            </div>
+            <div class="profile-field">
+                <span class="field-label">Division</span>
+                <span id="profile-div-val" class="field-value">-</span>
+            </div>
+            <div class="profile-field">
+                <span class="field-label">Lab Group</span>
+                <span id="profile-group-val" class="field-value">-</span>
+            </div>
+            <div class="profile-field">
+                <span class="field-label">Elective Subject</span>
+                <span id="profile-elective-val" class="field-value">-</span>
+            </div>
+            
+            <button class="switch-profile-btn" onclick="switchProfile()">Switch Profile</button>
+        </div>
+    </div>
+
+    <script>
+        // Database Embedded Variables
+        const schedules = {
+            "div1": {
+                        "Monday": [
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Modelling and Control of Robotic Systems (P)",
+                                                "code": "24MSME401P",
+                                                "room": "E002",
+                                                "faculty": "NIS",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "09:00-10:55",
+                                                "subject": "Civic Duties and Citizenship",
+                                                "code": "CDC",
+                                                "room": "E202",
+                                                "faculty": "CDCT",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "11:10-12:05",
+                                                "subject": "Dynamics of Machine",
+                                                "code": "24ME302T",
+                                                "room": "E201",
+                                                "faculty": "PVK",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "12:10-13:05",
+                                                "subject": "Manufacturing Process - I",
+                                                "code": "24ME303T",
+                                                "room": "E201",
+                                                "faculty": "JAY",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Fluid Machinery",
+                                                "code": "24ME333T",
+                                                "room": "E201",
+                                                "faculty": "ASR",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Introduction to Composite Materials",
+                                                "code": "24ME331T",
+                                                "room": "E202",
+                                                "faculty": "PVG",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Renewable & Sustainable Energy Technologies",
+                                                "code": "24ME332T",
+                                                "room": "E105",
+                                                "faculty": "RSX",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "15:10-16:05",
+                                                "subject": "Library/Cultural Activity",
+                                                "code": "Library",
+                                                "room": "-",
+                                                "faculty": "-",
+                                                "type": "break"
+                                    },
+                                    {
+                                                "time": "17:15-18:10",
+                                                "subject": "Manufacturing Process - I - Lab (Group A1)",
+                                                "code": "24ME303P",
+                                                "room": "C014B",
+                                                "faculty": "KSN",
+                                                "type": "lab"
+                                    }
+                        ],
+                        "Tuesday": [
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Vehicle Dynamics",
+                                                "code": "25MSME301T",
+                                                "room": "E003",
+                                                "faculty": "MJK",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Modelling and Control of Robotic Systems",
+                                                "code": "24MSME401T",
+                                                "room": "E002",
+                                                "faculty": "NIS",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "09:00-09:55",
+                                                "subject": "Heat Transfer",
+                                                "code": "24ME301T",
+                                                "room": "E201",
+                                                "faculty": "RSP",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "10:00-10:55",
+                                                "subject": "Engineering Economics",
+                                                "code": "24HS301T",
+                                                "room": "E201",
+                                                "faculty": "SBO",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "11:10-13:05",
+                                                "subject": "Dynamics of Machine - Lab (Group A2)",
+                                                "code": "24ME302P",
+                                                "room": "C014B",
+                                                "faculty": "JAY",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "11:10-13:05",
+                                                "subject": "Manufacturing Process - I - Lab (Group A3)",
+                                                "code": "24ME303P",
+                                                "room": "E208",
+                                                "faculty": "PVK",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "11:10-13:05",
+                                                "subject": "Heat Transfer Lab (Group A1)",
+                                                "code": "24ME301P",
+                                                "room": "E008",
+                                                "faculty": "NAH",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Renewable & Sustainable Energy Technologies",
+                                                "code": "24ME332T",
+                                                "room": "E105",
+                                                "faculty": "RSX",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Fluid Machinery",
+                                                "code": "24ME333T",
+                                                "room": "E201",
+                                                "faculty": "ASR",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Introduction to Composite Materials",
+                                                "code": "24ME331T",
+                                                "room": "E202",
+                                                "faculty": "PVG",
+                                                "type": "elective2"
+                                    }
+                        ],
+                        "Wednesday": [
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Modelling and Control of Robotic Systems",
+                                                "code": "24MSME401T",
+                                                "room": "E002",
+                                                "faculty": "NIS",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Vehicle Dynamics",
+                                                "code": "25MSME301T",
+                                                "room": "E003",
+                                                "faculty": "MJK",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "09:00-09:55",
+                                                "subject": "Heat Transfer",
+                                                "code": "24ME301T",
+                                                "room": "E201",
+                                                "faculty": "RSP",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "10:00-10:55",
+                                                "subject": "Dynamics of Machine",
+                                                "code": "24ME302T",
+                                                "room": "E201",
+                                                "faculty": "PVK",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "11:10-12:05",
+                                                "subject": "Library/Cultural Activity",
+                                                "code": "Library",
+                                                "room": "-",
+                                                "faculty": "-",
+                                                "type": "break"
+                                    },
+                                    {
+                                                "time": "12:10-13:05",
+                                                "subject": "Manufacturing Process - I",
+                                                "code": "24ME303T",
+                                                "room": "E201",
+                                                "faculty": "JAY",
+                                                "type": "core"
+                                    }
+                        ],
+                        "Thursday": [
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Vehicle Dynamics",
+                                                "code": "25MSME301T",
+                                                "room": "E003",
+                                                "faculty": "MJK",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Modelling and Control of Robotic Systems",
+                                                "code": "24MSME401T",
+                                                "room": "E002",
+                                                "faculty": "NIS",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "09:00-09:55",
+                                                "subject": "Heat Transfer",
+                                                "code": "24ME301T",
+                                                "room": "E202",
+                                                "faculty": "RSP",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "10:00-10:55",
+                                                "subject": "Engineering Economics",
+                                                "code": "24HS301T",
+                                                "room": "E202",
+                                                "faculty": "SBO",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "11:10-13:05",
+                                                "subject": "Manufacturing Process - I - Lab (Group A3)",
+                                                "code": "24ME303P",
+                                                "room": "C014B",
+                                                "faculty": "RAGU",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "11:10-13:05",
+                                                "subject": "Heat Transfer Lab (Group A2)",
+                                                "code": "24ME301P",
+                                                "room": "E008",
+                                                "faculty": "RAD",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "11:10-13:05",
+                                                "subject": "Dynamics of Machine - Lab (Group A1)",
+                                                "code": "24ME302P",
+                                                "room": "E208",
+                                                "faculty": "PVK",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Dynamics of Machine",
+                                                "code": "24ME302T",
+                                                "room": "E202",
+                                                "faculty": "PVK",
+                                                "type": "core"
+                                    }
+                        ],
+                        "Friday": [
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Modelling and Control of Robotic Systems (P)",
+                                                "code": "24MSME401P",
+                                                "room": "E002",
+                                                "faculty": "NIS",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "09:00-09:55",
+                                                "subject": "Manufacturing Process - I",
+                                                "code": "24ME303T",
+                                                "room": "E105",
+                                                "faculty": "JAY",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "10:00-10:55",
+                                                "subject": "Engineering Economics",
+                                                "code": "24HS301T",
+                                                "room": "E105",
+                                                "faculty": "SBO",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "11:10-13:05",
+                                                "subject": "Heat Transfer Lab (Group A3)",
+                                                "code": "24ME301P",
+                                                "room": "E008",
+                                                "faculty": "RAD",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "11:10-13:05",
+                                                "subject": "Dynamics of Machine - Lab (Group A2)",
+                                                "code": "24ME302P",
+                                                "room": "E208",
+                                                "faculty": "PVK",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Fluid Machinery",
+                                                "code": "24ME333T",
+                                                "room": "E201",
+                                                "faculty": "ASR",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Introduction to Composite Materials",
+                                                "code": "24ME331T",
+                                                "room": "E202",
+                                                "faculty": "PVG",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Renewable & Sustainable Energy Technologies",
+                                                "code": "24ME332T",
+                                                "room": "E105",
+                                                "faculty": "RSX",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "15:10-16:05",
+                                                "subject": "Civic Duties and Citizenship",
+                                                "code": "CDC",
+                                                "room": "E105",
+                                                "faculty": "CDCT",
+                                                "type": "core"
+                                    }
+                        ]
+            },
+            "div2": {
+                        "Monday": [
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Modelling and Control of Robotic Systems (P)",
+                                                "code": "24MSME401P",
+                                                "room": "E002",
+                                                "faculty": "NIS",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "09:00-10:55",
+                                                "subject": "Dynamics of Machine - Lab (Group A6)",
+                                                "code": "24ME302P",
+                                                "room": "E208",
+                                                "faculty": "NIS",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "09:00-10:55",
+                                                "subject": "Heat Transfer Lab (Group A4)",
+                                                "code": "24ME301P",
+                                                "room": "E008",
+                                                "faculty": "RAD",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "09:00-10:55",
+                                                "subject": "Manufacturing Process - I - Lab (Group A5)",
+                                                "code": "24ME303P",
+                                                "room": "C014B",
+                                                "faculty": "KSN",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "11:10-12:05",
+                                                "subject": "Dynamics of Machine",
+                                                "code": "24ME302T",
+                                                "room": "E202",
+                                                "faculty": "NIS",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Fluid Machinery",
+                                                "code": "24ME333T",
+                                                "room": "E201",
+                                                "faculty": "ASR",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Introduction to Composite Materials",
+                                                "code": "24ME331T",
+                                                "room": "E202",
+                                                "faculty": "PVG",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Renewable & Sustainable Energy Technologies",
+                                                "code": "24ME332T",
+                                                "room": "E105",
+                                                "faculty": "RSX",
+                                                "type": "elective2"
+                                    }
+                        ],
+                        "Tuesday": [
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Vehicle Dynamics",
+                                                "code": "25MSME301T",
+                                                "room": "E003",
+                                                "faculty": "MJK",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Modelling and Control of Robotic Systems",
+                                                "code": "24MSME401T",
+                                                "room": "E002",
+                                                "faculty": "NIS",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "09:00-09:55",
+                                                "subject": "Engineering Economics",
+                                                "code": "24HS301T",
+                                                "room": "E101",
+                                                "faculty": "SBO",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "10:00-10:55",
+                                                "subject": "Library/Cultural Activity",
+                                                "code": "Library",
+                                                "room": "-",
+                                                "faculty": "-",
+                                                "type": "break"
+                                    },
+                                    {
+                                                "time": "11:10-12:05",
+                                                "subject": "Library/Cultural Activity",
+                                                "code": "Library",
+                                                "room": "-",
+                                                "faculty": "-",
+                                                "type": "break"
+                                    },
+                                    {
+                                                "time": "12:10-13:05",
+                                                "subject": "Fluid Machinery",
+                                                "code": "24ME333T",
+                                                "room": "E105",
+                                                "faculty": "SSK",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Renewable & Sustainable Energy Technologies",
+                                                "code": "24ME332T",
+                                                "room": "E105",
+                                                "faculty": "RSX",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Fluid Machinery",
+                                                "code": "24ME333T",
+                                                "room": "E201",
+                                                "faculty": "ASR",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Introduction to Composite Materials",
+                                                "code": "24ME331T",
+                                                "room": "E202",
+                                                "faculty": "PVG",
+                                                "type": "elective2"
+                                    }
+                        ],
+                        "Wednesday": [
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Modelling and Control of Robotic Systems",
+                                                "code": "24MSME401T",
+                                                "room": "E002",
+                                                "faculty": "NIS",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Vehicle Dynamics",
+                                                "code": "25MSME301T",
+                                                "room": "E003",
+                                                "faculty": "MJK",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "09:00-10:55",
+                                                "subject": "Heat Transfer Lab (Group A5)",
+                                                "code": "24ME301P",
+                                                "room": "E008",
+                                                "faculty": "RAD",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "09:00-10:55",
+                                                "subject": "Dynamics of Machine - Lab (Group A4)",
+                                                "code": "24ME302P",
+                                                "room": "E208",
+                                                "faculty": "NIS",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "09:00-10:55",
+                                                "subject": "Manufacturing Process - I - Lab (Group A6)",
+                                                "code": "24ME303P",
+                                                "room": "C014B",
+                                                "faculty": "KSN",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "11:10-12:05",
+                                                "subject": "Library/Cultural Activity",
+                                                "code": "Library",
+                                                "room": "-",
+                                                "faculty": "-",
+                                                "type": "break"
+                                    },
+                                    {
+                                                "time": "12:10-13:05",
+                                                "subject": "Dynamics of Machine",
+                                                "code": "24ME302T",
+                                                "room": "E202",
+                                                "faculty": "SSK",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Manufacturing Process - I",
+                                                "code": "24ME303T",
+                                                "room": "E105",
+                                                "faculty": "KSN",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "16:15-17:10",
+                                                "subject": "Civic Duties and Citizenship",
+                                                "code": "CDC",
+                                                "room": "E105",
+                                                "faculty": "CDCT",
+                                                "type": "core"
+                                    }
+                        ],
+                        "Thursday": [
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Vehicle Dynamics",
+                                                "code": "25MSME301T",
+                                                "room": "E003",
+                                                "faculty": "MJK",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Modelling and Control of Robotic Systems",
+                                                "code": "24MSME401T",
+                                                "room": "E002",
+                                                "faculty": "NIS",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "09:00-09:55",
+                                                "subject": "Engineering Economics",
+                                                "code": "24HS301T",
+                                                "room": "E105",
+                                                "faculty": "SBO",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "10:00-10:55",
+                                                "subject": "Dynamics of Machine",
+                                                "code": "24ME302T",
+                                                "room": "E105",
+                                                "faculty": "NIS",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "11:10-13:05",
+                                                "subject": "Heat Transfer Lab (Group A6)",
+                                                "code": "24ME301P",
+                                                "room": "E008",
+                                                "faculty": "RAD",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "11:10-13:05",
+                                                "subject": "Manufacturing Process - I - Lab (Group A4)",
+                                                "code": "24ME303P",
+                                                "room": "C014B",
+                                                "faculty": "KSN",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "11:10-13:05",
+                                                "subject": "Dynamics of Machine - Lab (Group A5)",
+                                                "code": "24ME302P",
+                                                "room": "E208",
+                                                "faculty": "VVY",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Manufacturing Process - I",
+                                                "code": "24ME303T",
+                                                "room": "E105",
+                                                "faculty": "NIS",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "16:15-17:10",
+                                                "subject": "Civic Duties and Citizenship",
+                                                "code": "CDC",
+                                                "room": "E103",
+                                                "faculty": "CDCT",
+                                                "type": "core"
+                                    }
+                        ],
+                        "Friday": [
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Modelling and Control of Robotic Systems (P)",
+                                                "code": "24MSME401P",
+                                                "room": "E002",
+                                                "faculty": "NIS",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "09:00-09:55",
+                                                "subject": "Engineering Economics",
+                                                "code": "24HS301T",
+                                                "room": "E202",
+                                                "faculty": "SBO",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "10:00-10:55",
+                                                "subject": "Dynamics of Machine",
+                                                "code": "24ME301T",
+                                                "room": "E202",
+                                                "faculty": "SSK",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "11:10-12:05",
+                                                "subject": "Manufacturing Process - I",
+                                                "code": "24ME303T",
+                                                "room": "E202",
+                                                "faculty": "KSN",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "12:10-13:05",
+                                                "subject": "Dynamics of Machine",
+                                                "code": "24ME302T",
+                                                "room": "E201",
+                                                "faculty": "NIS",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Fluid Machinery",
+                                                "code": "24ME333T",
+                                                "room": "E201",
+                                                "faculty": "ASR",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Introduction to Composite Materials",
+                                                "code": "24ME331T",
+                                                "room": "E202",
+                                                "faculty": "PVG",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Renewable & Sustainable Energy Technologies",
+                                                "code": "24ME332T",
+                                                "room": "E105",
+                                                "faculty": "RSX",
+                                                "type": "elective2"
+                                    }
+                        ]
+            },
+            "div3": {
+                        "Monday": [
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Modelling and Control of Robotic Systems (P)",
+                                                "code": "24MSME401P",
+                                                "room": "E002",
+                                                "faculty": "NIS",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "09:00-09:55",
+                                                "subject": "Introduction to Composite Materials",
+                                                "code": "24ME331T",
+                                                "room": "E202",
+                                                "faculty": "NAH",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "11:10-13:05",
+                                                "subject": "Manufacturing Process - I - Lab (Group A8)",
+                                                "code": "24ME303P",
+                                                "room": "C014B",
+                                                "faculty": "KSN",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "11:10-13:05",
+                                                "subject": "Dynamics of Machine - Lab (Group A9)",
+                                                "code": "24ME302P",
+                                                "room": "E208",
+                                                "faculty": "NAG",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "11:10-13:05",
+                                                "subject": "Heat Transfer Lab (Group A7)",
+                                                "code": "24ME301P",
+                                                "room": "E008",
+                                                "faculty": "NAH",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Fluid Machinery",
+                                                "code": "24ME333T",
+                                                "room": "E201",
+                                                "faculty": "ASR",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Introduction to Composite Materials",
+                                                "code": "24ME331T",
+                                                "room": "E202",
+                                                "faculty": "PVG",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Renewable & Sustainable Energy Technologies",
+                                                "code": "24ME332T",
+                                                "room": "E105",
+                                                "faculty": "RSX",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "15:10-16:05",
+                                                "subject": "Introduction to Composite Materials",
+                                                "code": "24ME331T",
+                                                "room": "E105",
+                                                "faculty": "NAG",
+                                                "type": "elective2"
+                                    }
+                        ],
+                        "Tuesday": [
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Vehicle Dynamics",
+                                                "code": "25MSME301T",
+                                                "room": "E003",
+                                                "faculty": "MJK",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Modelling and Control of Robotic Systems",
+                                                "code": "24MSME401T",
+                                                "room": "E002",
+                                                "faculty": "NIS",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "12:10-13:05",
+                                                "subject": "Dynamics of Machine",
+                                                "code": "24ME302T",
+                                                "room": "E105",
+                                                "faculty": "NAG",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Renewable & Sustainable Energy Technologies",
+                                                "code": "24ME332T",
+                                                "room": "E105",
+                                                "faculty": "RSX",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Fluid Machinery",
+                                                "code": "24ME333T",
+                                                "room": "E201",
+                                                "faculty": "ASR",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Introduction to Composite Materials",
+                                                "code": "24ME331T",
+                                                "room": "E202",
+                                                "faculty": "PVG",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "15:10-16:05",
+                                                "subject": "Dynamics of Machine",
+                                                "code": "24ME302T",
+                                                "room": "E105",
+                                                "faculty": "KSN",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "16:15-17:10",
+                                                "subject": "Civic Duties and Citizenship",
+                                                "code": "CDC",
+                                                "room": "E105",
+                                                "faculty": "CDCT",
+                                                "type": "core"
+                                    }
+                        ],
+                        "Wednesday": [
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Modelling and Control of Robotic Systems",
+                                                "code": "24MSME401T",
+                                                "room": "E002",
+                                                "faculty": "NIS",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Vehicle Dynamics",
+                                                "code": "25MSME301T",
+                                                "room": "E003",
+                                                "faculty": "MJK",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "09:00-09:55",
+                                                "subject": "Manufacturing Process - I",
+                                                "code": "24ME303T",
+                                                "room": "E201",
+                                                "faculty": "NAH",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "10:00-10:55",
+                                                "subject": "Engineering Economics",
+                                                "code": "24HS301T",
+                                                "room": "E202",
+                                                "faculty": "NIJO",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "11:10-12:05",
+                                                "subject": "Engineering Economics",
+                                                "code": "24HS301T",
+                                                "room": "E202",
+                                                "faculty": "NIJO",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "12:10-13:05",
+                                                "subject": "Manufacturing Process - I",
+                                                "code": "24ME303T",
+                                                "room": "E202",
+                                                "faculty": "KSN",
+                                                "type": "core"
+                                    }
+                        ],
+                        "Thursday": [
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Vehicle Dynamics",
+                                                "code": "25MSME301T",
+                                                "room": "E003",
+                                                "faculty": "MJK",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Modelling and Control of Robotic Systems",
+                                                "code": "24MSME401T",
+                                                "room": "E002",
+                                                "faculty": "NIS",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "09:00-09:55",
+                                                "subject": "Manufacturing Process - I - Lab (Group A9)",
+                                                "code": "24ME303P",
+                                                "room": "C014B",
+                                                "faculty": "RAGU",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "09:00-09:55",
+                                                "subject": "Heat Transfer Lab (Group A8)",
+                                                "code": "24ME301P",
+                                                "room": "E008",
+                                                "faculty": "NAH",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "09:00-09:55",
+                                                "subject": "Dynamics of Machine - Lab (Group A7)",
+                                                "code": "24ME302P",
+                                                "room": "E208",
+                                                "faculty": "NAG",
+                                                "type": "lab"
+                                    },
+                                    {
+                                                "time": "10:00-10:55",
+                                                "subject": "Manufacturing Process - I",
+                                                "code": "24ME303T",
+                                                "room": "E201",
+                                                "faculty": "KSN",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "11:10-12:05",
+                                                "subject": "Engineering Economics",
+                                                "code": "24HS301T",
+                                                "room": "E105",
+                                                "faculty": "NIJO",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "12:10-13:05",
+                                                "subject": "Library/Cultural Activity",
+                                                "code": "Library",
+                                                "room": "-",
+                                                "faculty": "-",
+                                                "type": "break"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Manufacturing Process - I",
+                                                "code": "24ME303T",
+                                                "room": "E105",
+                                                "faculty": "NAH",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "16:15-17:10",
+                                                "subject": "Civic Duties and Citizenship",
+                                                "code": "CDC",
+                                                "room": "E103",
+                                                "faculty": "CDCT",
+                                                "type": "core"
+                                    }
+                        ],
+                        "Friday": [
+                                    {
+                                                "time": "08:00-09:00",
+                                                "subject": "Modelling and Control of Robotic Systems (P)",
+                                                "code": "24MSME401P",
+                                                "room": "E002",
+                                                "faculty": "NIS",
+                                                "type": "elective1"
+                                    },
+                                    {
+                                                "time": "09:00-09:55",
+                                                "subject": "Dynamics of Machine",
+                                                "code": "24ME302T",
+                                                "room": "E008",
+                                                "faculty": "RAD",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "10:00-10:55",
+                                                "subject": "Library/Cultural Activity",
+                                                "code": "Library",
+                                                "room": "-",
+                                                "faculty": "-",
+                                                "type": "break"
+                                    },
+                                    {
+                                                "time": "11:10-12:05",
+                                                "subject": "Dynamics of Machine",
+                                                "code": "24ME302T",
+                                                "room": "E201",
+                                                "faculty": "NAG",
+                                                "type": "core"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Fluid Machinery",
+                                                "code": "24ME333T",
+                                                "room": "E201",
+                                                "faculty": "ASR",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Introduction to Composite Materials",
+                                                "code": "24ME331T",
+                                                "room": "E202",
+                                                "faculty": "PVG",
+                                                "type": "elective2"
+                                    },
+                                    {
+                                                "time": "14:10-15:05",
+                                                "subject": "Renewable & Sustainable Energy Technologies",
+                                                "code": "24ME332T",
+                                                "room": "E105",
+                                                "faculty": "RSX",
+                                                "type": "elective2"
+                                    }
+                        ]
+            }
+};
+        const students = [
+            {
+                        "roll": "24BME001",
+                        "name": "AARSH MITESH MEHTA",
+                        "div": 1,
+                        "group": "A1",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME002",
+                        "name": "SHASHANK MAURYA",
+                        "div": 1,
+                        "group": "A1",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME003",
+                        "name": "DHAIRYA SOHILBHAI SHETH",
+                        "div": 1,
+                        "group": "A1",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME004",
+                        "name": "SNEH RAKESH PATEL",
+                        "div": 1,
+                        "group": "A1",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME005",
+                        "name": "RISHI BHAVESH SHAH",
+                        "div": 1,
+                        "group": "A1",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME006",
+                        "name": "VIDIT MEHUL THAKKAR",
+                        "div": 1,
+                        "group": "A1",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME007",
+                        "name": "MAYANK HARESHBHAI VAGHASIA",
+                        "div": 1,
+                        "group": "A1",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME008",
+                        "name": "RISHI RAJESH THUMMAR",
+                        "div": 1,
+                        "group": "A1",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME009",
+                        "name": "DHRUVRAJSINH VIRENDRASINH ZALA",
+                        "div": 1,
+                        "group": "A1",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME011",
+                        "name": "ADITYA VIKRAM NAYAK",
+                        "div": 1,
+                        "group": "A1",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME012",
+                        "name": "MEVADA JAYDEEP NARESHBHAI",
+                        "div": 1,
+                        "group": "A1",
+                        "elective": null,
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME013",
+                        "name": "SEVAK DHRUV BHARATKUMAR",
+                        "div": 1,
+                        "group": "A1",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME014",
+                        "name": "VRAJ SANJAY SARAIYA",
+                        "div": 1,
+                        "group": "A1",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME015",
+                        "name": "DEV",
+                        "div": 1,
+                        "group": "A1",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME016",
+                        "name": "KULIN DAXESH DALAL",
+                        "div": 1,
+                        "group": "A1",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME017",
+                        "name": "TANISHQ",
+                        "div": 1,
+                        "group": "A1",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME018",
+                        "name": "BHUVA KRISHAY RAJESHBHAI",
+                        "div": 1,
+                        "group": "A1",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME019",
+                        "name": "MUDIT SRIVASTAVA",
+                        "div": 1,
+                        "group": "A1",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME020",
+                        "name": "RUSHIN ASHISH PANCHAL",
+                        "div": 1,
+                        "group": "A1",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME021",
+                        "name": "KRISH MEHUL CHOKSI",
+                        "div": 1,
+                        "group": "A1",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME022",
+                        "name": "JAY JALDEEP PATEL",
+                        "div": 1,
+                        "group": "A2",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME023",
+                        "name": "KUSH DEVANGBHAI PANCHAL",
+                        "div": 1,
+                        "group": "A2",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME024",
+                        "name": "YUG SNEHALKUMAR PATEL",
+                        "div": 1,
+                        "group": "A2",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME025",
+                        "name": "RUSHIL JAISWAL",
+                        "div": 1,
+                        "group": "A2",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME026",
+                        "name": "DHRUV YOGESH BHAI SATHAVARA",
+                        "div": 1,
+                        "group": "A2",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME027",
+                        "name": "PRIYANSHU NAYAN PARMAR",
+                        "div": 1,
+                        "group": "A2",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME028",
+                        "name": "MANTRA DIGANTKUMAR CHHAYA",
+                        "div": 1,
+                        "group": "A2",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME029",
+                        "name": "JAINISH SAMIR SHAH",
+                        "div": 1,
+                        "group": "A2",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME030",
+                        "name": "IKSHIT GUPTA",
+                        "div": 1,
+                        "group": "A2",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME031",
+                        "name": "HEMIT HARESHKUMAR KANSARA",
+                        "div": 1,
+                        "group": "A2",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME032",
+                        "name": "KEVAL VALLABH ZINZALA",
+                        "div": 1,
+                        "group": "A2",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME033",
+                        "name": "TANISH VELANI",
+                        "div": 1,
+                        "group": "A2",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME034",
+                        "name": "CHAUHAN DEVANSH UTTAMKUMAR",
+                        "div": 1,
+                        "group": "A2",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME036",
+                        "name": "RADADIYA MEET DINESHBHAI",
+                        "div": 1,
+                        "group": "A2",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME037",
+                        "name": "VYAS AADITYA MANISHKUMAR",
+                        "div": 1,
+                        "group": "A2",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME038",
+                        "name": "BHATT DHAIRYA PARESHKUMAR",
+                        "div": 1,
+                        "group": "A2",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME039",
+                        "name": "OM KHETRA",
+                        "div": 1,
+                        "group": "A2",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME040",
+                        "name": "MUKARRAM MOHAMMAD LOKHANDWALA",
+                        "div": 1,
+                        "group": "A2",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME041",
+                        "name": "DHAVAL AHIR",
+                        "div": 1,
+                        "group": "A2",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME042",
+                        "name": "PARMAR BHAVYARAJ BHARATSINH",
+                        "div": 1,
+                        "group": "A2",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME043",
+                        "name": "YASH HIMANSHU MANDIRWALA",
+                        "div": 1,
+                        "group": "A3",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME044",
+                        "name": "MAHIKA BISHT",
+                        "div": 1,
+                        "group": "A3",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME045",
+                        "name": "YUG PRAVINBHAI PATEL",
+                        "div": 1,
+                        "group": "A3",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME046",
+                        "name": "VANDAN ANAND AGARWAL",
+                        "div": 1,
+                        "group": "A3",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME047",
+                        "name": "HARSHIL ASHVINBHAI THUMMAR",
+                        "div": 1,
+                        "group": "A3",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME048",
+                        "name": "JAYNIL VIRAL PATEL",
+                        "div": 1,
+                        "group": "A3",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME049",
+                        "name": "RAMANI YASH KISHORBHAI",
+                        "div": 1,
+                        "group": "A3",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME051",
+                        "name": "KA. PATEL VANSHKUMAR TEJASKUMAR",
+                        "div": 1,
+                        "group": "A3",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME052",
+                        "name": "HARIT JAGDISH MEHTA",
+                        "div": 1,
+                        "group": "A3",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME053",
+                        "name": "ISHMIT SINGH CHADHA",
+                        "div": 1,
+                        "group": "A3",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME054",
+                        "name": "YASHVI SHASHANK MAJMUDAR",
+                        "div": 1,
+                        "group": "A3",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME055",
+                        "name": "AKSHAT HITESH JARIWALA",
+                        "div": 1,
+                        "group": "A3",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME056",
+                        "name": "NIHAR VIRENBHAI SHAH",
+                        "div": 1,
+                        "group": "A3",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME057",
+                        "name": "AADIT SATHEESAN NAIR",
+                        "div": 1,
+                        "group": "A3",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME059",
+                        "name": "MEGH AMIT BHALODIYA",
+                        "div": 1,
+                        "group": "A3",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME060",
+                        "name": "ARIHANT DARSHANBHAI PATEL",
+                        "div": 1,
+                        "group": "A3",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME061",
+                        "name": "KABIRSINH HEMANTSINH MATROJA",
+                        "div": 1,
+                        "group": "A3",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME062",
+                        "name": "JHIL MEHUL MANDAVIA",
+                        "div": 1,
+                        "group": "A3",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME063",
+                        "name": "JILL KAMLESH PARMAR",
+                        "div": 1,
+                        "group": "A3",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME064",
+                        "name": "JAYKUMAR SANJAY PATEL",
+                        "div": 2,
+                        "group": "A4",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME065",
+                        "name": "BHARODIYA SOHAM",
+                        "div": 2,
+                        "group": "A4",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME066",
+                        "name": "BHATT VED SAMIRKUMAR",
+                        "div": 2,
+                        "group": "A4",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME067",
+                        "name": "KRISH RAKESHKUMAR PANDYA",
+                        "div": 2,
+                        "group": "A4",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME068",
+                        "name": "TIRTH DHAVAL MEHTA",
+                        "div": 2,
+                        "group": "A4",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME069",
+                        "name": "SHLOK ABHISHEK GOYAL",
+                        "div": 2,
+                        "group": "A4",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME070",
+                        "name": "NILANSHU JIGNESHBHAI SHAH",
+                        "div": 2,
+                        "group": "A4",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME071",
+                        "name": "SIDDHARTH GORDHANBHAI SOLANKI",
+                        "div": 2,
+                        "group": "A4",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME073",
+                        "name": "HIMADRI BIRENDER ARJARIYA",
+                        "div": 2,
+                        "group": "A4",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME074",
+                        "name": "DHRUV VINODBHAI ASODARIYA",
+                        "div": 2,
+                        "group": "A4",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME075",
+                        "name": "DHYAAN DAVE",
+                        "div": 2,
+                        "group": "A4",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME076",
+                        "name": "PATEL PARITA JAYESHKUMAR",
+                        "div": 2,
+                        "group": "A4",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME077",
+                        "name": "JAYRAJ BRAHMBHATT",
+                        "div": 2,
+                        "group": "A4",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME078",
+                        "name": "HRISHIT N SOLANKI",
+                        "div": 2,
+                        "group": "A4",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME079",
+                        "name": "RISHIT CHAITANYA SALASIYA",
+                        "div": 2,
+                        "group": "A4",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME080",
+                        "name": "TUSHAR ARVINDBHAI MAHIDA",
+                        "div": 2,
+                        "group": "A4",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME081",
+                        "name": "KUSH ANAND VYAS",
+                        "div": 2,
+                        "group": "A4",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME082",
+                        "name": "FENIL VIVAL LALKIYA",
+                        "div": 2,
+                        "group": "A4",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME083",
+                        "name": "HETANSH HEMANTKUMAR PATEL",
+                        "div": 2,
+                        "group": "A4",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME085",
+                        "name": "KUSHAGRA PRAGNESHKUMAR PATEL",
+                        "div": 2,
+                        "group": "A5",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME086",
+                        "name": "VANZA HIMESHBHAI JAGUBHAI",
+                        "div": 2,
+                        "group": "A5",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME087",
+                        "name": "PATEL VANSH YASH",
+                        "div": 2,
+                        "group": "A5",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME088",
+                        "name": "HARSH NALIYAPARA",
+                        "div": 2,
+                        "group": "A5",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME089",
+                        "name": "MEGH",
+                        "div": 2,
+                        "group": "A5",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME090",
+                        "name": "ANKUR DHARMENDRAKUMAR CHATURVEDI",
+                        "div": 2,
+                        "group": "A5",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME091",
+                        "name": "RAJ YAGNESH PANDYA",
+                        "div": 2,
+                        "group": "A5",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME093",
+                        "name": "TEJTHUMAR HARSUKHBHAI THUMAR",
+                        "div": 2,
+                        "group": "A5",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME094",
+                        "name": "NISHCHAY SHARMA",
+                        "div": 2,
+                        "group": "A5",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME095",
+                        "name": "HEET RAKESH BHAI TRIVEDI",
+                        "div": 2,
+                        "group": "A5",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME096",
+                        "name": "PARTH ARVINDGIRI APARNATHI",
+                        "div": 2,
+                        "group": "A5",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME097",
+                        "name": "DHYANA UPESH SHAH",
+                        "div": 2,
+                        "group": "A5",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME098",
+                        "name": "SOUMYA PRADHAN",
+                        "div": 2,
+                        "group": "A5",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME100",
+                        "name": "SIDDHARTH ROUT",
+                        "div": 2,
+                        "group": "A5",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME101",
+                        "name": "AADITYA PAJNI",
+                        "div": 2,
+                        "group": "A5",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME102",
+                        "name": "AJAYSINH NARPATSINH JADEJA",
+                        "div": 2,
+                        "group": "A5",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME104",
+                        "name": "PATEL MERIKKUMAR JAYESHKUMAR",
+                        "div": 2,
+                        "group": "A5",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME105",
+                        "name": "DEEPAN APURVA SHAH",
+                        "div": 2,
+                        "group": "A5",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME106",
+                        "name": "NIKET NITHESH KOLLAMKULANGARA",
+                        "div": 2,
+                        "group": "A5",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME107",
+                        "name": "DARSHAN PARESHBHAI LOHAR",
+                        "div": 2,
+                        "group": "A6",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME110",
+                        "name": "PAMNANI VEDANT KIRAN",
+                        "div": 2,
+                        "group": "A6",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME112",
+                        "name": "PRAYAG PATEL",
+                        "div": 2,
+                        "group": "A6",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME113",
+                        "name": "SOHAM",
+                        "div": 2,
+                        "group": "A6",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME114",
+                        "name": "SAVALIYA JEEL VINODBHAI",
+                        "div": 2,
+                        "group": "A6",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME115",
+                        "name": "SANKLA ARYAN DILIP",
+                        "div": 2,
+                        "group": "A6",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME116",
+                        "name": "VAGHAMSHI MANTRAKUMAR AMARISHBHAI",
+                        "div": 2,
+                        "group": "A6",
+                        "elective": null,
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME117",
+                        "name": "KRISH SHIVKUMAR JAISWAL",
+                        "div": 2,
+                        "group": "A6",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME118",
+                        "name": "VARUN SHERSIA",
+                        "div": 2,
+                        "group": "A6",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME121",
+                        "name": "SHUBHANG YALGURESH KULKARNI",
+                        "div": 2,
+                        "group": "A6",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME122",
+                        "name": "KHUSHVI CHIRAG SHAH",
+                        "div": 2,
+                        "group": "A6",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME123",
+                        "name": "BHAVYA PINANK SHAH",
+                        "div": 2,
+                        "group": "A6",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME124",
+                        "name": "PATEL DHYAN CHIRAGKUMAR",
+                        "div": 2,
+                        "group": "A6",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME126",
+                        "name": "DHIRAJ GOSWAMI",
+                        "div": 2,
+                        "group": "A6",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME127",
+                        "name": "DEVDATTA ANIL INGOLE",
+                        "div": 2,
+                        "group": "A6",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME128",
+                        "name": "DHYEY MEHULKUMAR MAKWANA",
+                        "div": 2,
+                        "group": "A6",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME129",
+                        "name": "MANAN MUKESHBHAI DHANDHUKIA",
+                        "div": 2,
+                        "group": "A6",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME130",
+                        "name": "EPARI ADARSH PATRO",
+                        "div": 3,
+                        "group": "A7",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME131",
+                        "name": "ANSHUL MEHTA",
+                        "div": 3,
+                        "group": "A7",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME132",
+                        "name": "ZAID ASHFAQ RATHOD",
+                        "div": 3,
+                        "group": "A7",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME133",
+                        "name": "HARSHIL MAHENDRABHAI KATARIA",
+                        "div": 3,
+                        "group": "A7",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME134",
+                        "name": "MANN VISHAL VYAS",
+                        "div": 3,
+                        "group": "A7",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME135",
+                        "name": "SHLOK MANISH GAJJAR",
+                        "div": 3,
+                        "group": "A7",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME136",
+                        "name": "RAVISHNU NITESHKUMAR PANCHAL",
+                        "div": 3,
+                        "group": "A7",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME138",
+                        "name": "HET DILIPBHAI THAKKAR",
+                        "div": 3,
+                        "group": "A7",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME139",
+                        "name": "DEVAM ACHARYA",
+                        "div": 3,
+                        "group": "A7",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME140",
+                        "name": "NISHTHA PRAHALAD MAKANI",
+                        "div": 3,
+                        "group": "A7",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME141",
+                        "name": "TIRTH CHAROLA",
+                        "div": 3,
+                        "group": "A7",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME142",
+                        "name": "NEEV TUSHAR KANSARA",
+                        "div": 3,
+                        "group": "A7",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME143",
+                        "name": "MUSTANSIR HUSENI GHADIYALI",
+                        "div": 3,
+                        "group": "A7",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME144",
+                        "name": "JEET RAJESHBHAI SIDPARA",
+                        "div": 3,
+                        "group": "A7",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME145",
+                        "name": "SHIVANSH CHOKSHI",
+                        "div": 3,
+                        "group": "A7",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME146",
+                        "name": "OM DEVESH TRIVEDI",
+                        "div": 3,
+                        "group": "A7",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME147",
+                        "name": "HARIVANSH DARSHAN SOLANKI",
+                        "div": 3,
+                        "group": "A7",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME148",
+                        "name": "JAYVARDHANSINH YASHPALSINH CHUDASAMA",
+                        "div": 3,
+                        "group": "A7",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME149",
+                        "name": "DHAIRYA VIPUL SHAH",
+                        "div": 3,
+                        "group": "A7",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME150",
+                        "name": "HRISHIKESH RAJESHBHAI KATHIRIYA",
+                        "div": 3,
+                        "group": "A8",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME151",
+                        "name": "AYUSH DODIA",
+                        "div": 3,
+                        "group": "A8",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME152",
+                        "name": "MANTRA SASANI",
+                        "div": 3,
+                        "group": "A8",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME153",
+                        "name": "RUDRA ROHITKUMAR RAVAL",
+                        "div": 3,
+                        "group": "A8",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME154",
+                        "name": "SHREENIDHI ARVINDBHAI DHAMELIYA",
+                        "div": 3,
+                        "group": "A8",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME155",
+                        "name": "VAGHASIYA NISARG KIRTIBHAI",
+                        "div": 3,
+                        "group": "A8",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME156",
+                        "name": "AHAD ASFAK PILUDIYA",
+                        "div": 3,
+                        "group": "A8",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME157",
+                        "name": "VIKAS KEWLANI",
+                        "div": 3,
+                        "group": "A8",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME158",
+                        "name": "KHUSHALI UMESHBHAI VYAS",
+                        "div": 3,
+                        "group": "A8",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME159",
+                        "name": "MOHIT JATINBHAI PANCHAL",
+                        "div": 3,
+                        "group": "A8",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME160",
+                        "name": "KALASH KINJALKUMAR SHAH",
+                        "div": 3,
+                        "group": "A8",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME161",
+                        "name": "PRANJAL VISHVESH BADHEKA",
+                        "div": 3,
+                        "group": "A8",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME162",
+                        "name": "KATHAN VIKAS VAKHARIA",
+                        "div": 3,
+                        "group": "A8",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME163",
+                        "name": "DEV JIGNESH PATEL",
+                        "div": 3,
+                        "group": "A8",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME164",
+                        "name": "DHRUVISH NIRAL SHAH",
+                        "div": 3,
+                        "group": "A8",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME165",
+                        "name": "PATEL MANN JAGADISHKUMAR",
+                        "div": 3,
+                        "group": "A8",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME166",
+                        "name": "KRISH BIPINBHAI VAISHNANI",
+                        "div": 3,
+                        "group": "A8",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME167",
+                        "name": "HEMAL RAJESHBHAI MERJA",
+                        "div": 3,
+                        "group": "A8",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME169",
+                        "name": "ADITYA GODHANI",
+                        "div": 3,
+                        "group": "A8",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME170",
+                        "name": "HUGO ADELINO JO\u00c3O NHAULE",
+                        "div": 3,
+                        "group": "A9",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME171",
+                        "name": "JOS\u00c9 AFONSO BILA",
+                        "div": 3,
+                        "group": "A9",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME172",
+                        "name": "FRANCISCO YASSINE MAMBIRISSE",
+                        "div": 3,
+                        "group": "A9",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME173",
+                        "name": "JOS\u00c9 LU\u00cdS ANT\u00d3NIO CELESTE",
+                        "div": 3,
+                        "group": "A9",
+                        "elective": null,
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME175",
+                        "name": "BRIJESH PANDIT",
+                        "div": 3,
+                        "group": "A9",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME177",
+                        "name": "DHAIRYA CHAUDHARI",
+                        "div": 3,
+                        "group": "A9",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME178",
+                        "name": "RADADIYA PRAYAG KAMLESHBHAI",
+                        "div": 3,
+                        "group": "A9",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME179",
+                        "name": "PANCHANI NEVIL ANISHBHAI",
+                        "div": 3,
+                        "group": "A9",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME180",
+                        "name": "RAWAL VYOM SANDEEP",
+                        "div": 3,
+                        "group": "A9",
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME181",
+                        "name": "KRUTARTH DINESH OZA",
+                        "div": 3,
+                        "group": "A9",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME182",
+                        "name": "CHAVDA ANIKETKUMAR SURESHBHAI",
+                        "div": 3,
+                        "group": "A9",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME183",
+                        "name": "NEEL NILESHBHAI RUDANI",
+                        "div": 3,
+                        "group": "A9",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME184",
+                        "name": "PRAJAPATI HARITKUMAR MAHESHBHAI",
+                        "div": 3,
+                        "group": "A9",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME185",
+                        "name": "SOLANKI JALPAN SURESHBHAI",
+                        "div": 3,
+                        "group": "A9",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME186",
+                        "name": "VASU ASHVINKUMAR VEKARIYA",
+                        "div": 3,
+                        "group": "A9",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME187",
+                        "name": "PRISHA GOSWAMI",
+                        "div": 1,
+                        "group": "A3",
+                        "elective": "Fluid Machinery",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME188",
+                        "name": "ROHAN K P",
+                        "div": 3,
+                        "group": "A9",
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME189",
+                        "name": "BIJAY KUMAR MANDAL",
+                        "div": 3,
+                        "group": "A9",
+                        "elective": null,
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME168",
+                        "name": "MALHAR ALAP MODI",
+                        "div": 3,
+                        "group": null,
+                        "elective": null,
+                        "isD2D": false
+            },
+            {
+                        "roll": "24BME191D",
+                        "name": "RANA DEV SHILPESH",
+                        "div": 1,
+                        "group": null,
+                        "elective": "Fluid Machinery",
+                        "isD2D": true
+            },
+            {
+                        "roll": "24BME192D",
+                        "name": "CHAUHAN TARUN HASMUKHBHAI",
+                        "div": 2,
+                        "group": null,
+                        "elective": "Fluid Machinery",
+                        "isD2D": true
+            },
+            {
+                        "roll": "24BME193D",
+                        "name": "SINOJIYA NANDAN TARUNKUMAR",
+                        "div": 2,
+                        "group": null,
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": true
+            },
+            {
+                        "roll": "24BME194D",
+                        "name": "SONEJI KUSH JATINBHAI",
+                        "div": 2,
+                        "group": null,
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": true
+            },
+            {
+                        "roll": "24BME195D",
+                        "name": "BALDANIYA BHAGIRATH KISHORBHAI",
+                        "div": 1,
+                        "group": null,
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": true
+            },
+            {
+                        "roll": "24BME197D",
+                        "name": "PAREKH YUG SAUNAK",
+                        "div": 3,
+                        "group": null,
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": true
+            },
+            {
+                        "roll": "24BME198D",
+                        "name": "SHINGADIYA ANKUSH VIJAYBHAI",
+                        "div": 3,
+                        "group": null,
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": true
+            },
+            {
+                        "roll": "24BME199D",
+                        "name": "NEEL DEPANI",
+                        "div": 3,
+                        "group": null,
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": true
+            },
+            {
+                        "roll": "24BME200D",
+                        "name": "RAVAL SARVAGNA DHRUVKUMAR",
+                        "div": 3,
+                        "group": null,
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": true
+            },
+            {
+                        "roll": "24BME201D",
+                        "name": "PITRODA DHRUV CHETANKUMAR",
+                        "div": 3,
+                        "group": null,
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": true
+            },
+            {
+                        "roll": "24BME202D",
+                        "name": "NANDISH NITIN PUROHIT",
+                        "div": 1,
+                        "group": null,
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": true
+            },
+            {
+                        "roll": "24BME203D",
+                        "name": "DAVE SHYAM HIMANSHUBHAI",
+                        "div": 2,
+                        "group": null,
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": true
+            },
+            {
+                        "roll": "24BME204D",
+                        "name": "HERIK RAKESH PATEL",
+                        "div": 1,
+                        "group": null,
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": true
+            },
+            {
+                        "roll": "24BME205D",
+                        "name": "VRUSHIN PANCHAL",
+                        "div": 1,
+                        "group": null,
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": true
+            },
+            {
+                        "roll": "24BME206D",
+                        "name": "SHAH DARSHIT",
+                        "div": 2,
+                        "group": null,
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": true
+            },
+            {
+                        "roll": "24BME207D",
+                        "name": "HRUSHABH PANCHAL",
+                        "div": 2,
+                        "group": null,
+                        "elective": "Introduction to Composite Materials",
+                        "isD2D": true
+            },
+            {
+                        "roll": "24BME208D",
+                        "name": "SOLANKI SMIT ARVIND",
+                        "div": 2,
+                        "group": null,
+                        "elective": "Renewable and Sustainable Energy Technologies",
+                        "isD2D": true
+            }
+];
+
+        const subjectNames = {
+            "24ME301T": "Heat Transfer",
+            "24ME302P": "Dynamics of Machine -Lab.",
+            "24ME302T": "Dynamics of Machine",
+            "24ME303P": "Manufacturing Process - I - Lab.",
+            "24ME303T": "Manufacturing Process - I",
+            "24HS301T": "Engineering Economics",
+            "24ME331T": "Introduction to Composite Materials",
+            "24ME332T": "Renewable & Sustainable Energy Technologies",
+            "24ME333T": "Fluid Machinery",
+            "24MSME401P": "Modelling and Control of Robotic Systems (P)",
+            "24MSME401T": "Modelling and Control of Robotic Systems",
+            "25MSME301T": "Vehicle Dynamics",
+            "24ME301P": "Heat Transfer Laboratory",
+            "CDC": "Civic Duties and Citizenship"
+        };
+
+        const subjectClasses = {
+            "24ME301T": "ht",
+            "24ME301P": "ht",
+            "24ME302T": "dom",
+            "24ME302P": "dom",
+            "24ME303T": "mp",
+            "24ME303P": "mp",
+            "24HS301T": "eco",
+            "24ME331T": "el2",
+            "24ME332T": "el2",
+            "24ME333T": "el2",
+            "24MSME401P": "el1",
+            "24MSME401T": "el1",
+            "25MSME301T": "el1",
+            "CDC": "cdc"
+        };
+
+        let loggedInStudent = null;
+        let currentDay = "Monday";
+
+        // Initialize App
+        window.onload = function() {
+            initDateClock();
+            
+            // Check for existing profile
+            const savedProfile = localStorage.getItem("profile");
+            if (savedProfile) {
+                loggedInStudent = JSON.parse(savedProfile);
+                document.getElementById("login-screen").style.display = "none";
+                document.getElementById("splash-screen").classList.add("fade-out");
+                initAppForStudent();
+            } else {
+                document.getElementById("splash-screen").classList.add("fade-out");
+                setupLoginWatchers();
+            }
+        };
+
+        // Date & Clock Loop
+        function initDateClock() {
+            function updateClock() {
+                const now = new Date();
+                
+                // Set Clock
+                const optionsTime = { hour: 'numeric', minute: '2-digit', hour12: true };
+                let timeStr = now.toLocaleTimeString('en-US', optionsTime);
+                timeStr = timeStr.replace(/^0/, ''); // Normalize leading zero
+                document.getElementById("current-time").innerText = timeStr;
+                
+                // Set Date
+                const optionsDate = { weekday: 'long', month: 'long', day: 'numeric' };
+                document.getElementById("current-date").innerText = now.toLocaleDateString('en-US', optionsDate);
+                
+                // Set Greeting
+                const hour = now.getHours();
+                let greeting = "Good Night!";
+                if (hour >= 5 && hour < 12) greeting = "Good Morning!";
+                else if (hour >= 12 && hour < 17) greeting = "Good Afternoon!";
+                else if (hour >= 17 && hour < 21) greeting = "Good Evening!";
+                
+                const nameStr = loggedInStudent ? ", " + getFirstName(loggedInStudent.name) : "!";
+                document.getElementById("greeting").innerText = greeting.replace("!", "") + nameStr;
+                
+                // Live state updates
+                updateActiveStates();
+            }
+            updateClock();
+            setInterval(updateClock, 1000);
+        }
+
+        function getFirstName(fullName) {
+            if (!fullName) return "";
+            const parts = fullName.split(' ');
+            return parts[0].charAt(0).toUpperCase() + parts[0].slice(1).toLowerCase();
+        }
+
+        // Setup Login Watchers & D2D Toggle
+        function setupLoginWatchers() {
+            const input = document.getElementById("roll-number-input");
+            input.addEventListener("input", function() {
+                const val = input.value.trim().toUpperCase();
+                const isD2D = val.endsWith('D');
+                const container = document.getElementById("d2d-group-container");
+                const select = document.getElementById("d2d-group-select");
+
+                if (isD2D) {
+                    // Find student to resolve division
+                    const student = students.find(s => s.roll === val);
+                    const div = student ? student.div : null;
+                    
+                    if (div) {
+                        const groups = div === 1 ? ['A1', 'A2', 'A3'] : div === 2 ? ['A4', 'A5', 'A6'] : ['A7', 'A8', 'A9'];
+                        select.innerHTML = groups.map(g => `<option value="${g}">Group ${g}</option>`).join('');
+                        container.classList.add("show");
+                    } else {
+                        select.innerHTML = '<option value="">No student found</option>';
+                        container.classList.add("show");
+                    }
+                } else {
+                    container.classList.remove("show");
+                }
+            });
+        }
+
+        function submitLogin() {
+            const val = document.getElementById("roll-number-input").value.trim().toUpperCase();
+            const err = document.getElementById("login-error-message");
+            err.innerText = "";
+
+            if (!val) {
+                err.innerText = "Please enter a valid roll number.";
+                return;
+            }
+
+            const student = students.find(s => s.roll === val);
+            if (!student) {
+                err.innerText = "Roll number not found in provisional list.";
+                return;
+            }
+
+            // Handle D2D dynamic group selection
+            if (student.isD2D) {
+                const group = document.getElementById("d2d-group-select").value;
+                if (!group) {
+                    err.innerText = "Please select your lab group.";
+                    return;
+                }
+                student.group = group;
+            }
+
+            // Save and initialize
+            loggedInStudent = student;
+            localStorage.setItem("profile", JSON.stringify(student));
+            document.getElementById("login-screen").style.display = "none";
+            initAppForStudent();
+        }
+
+        function initAppForStudent() {
+            // Setup Profile Drawer
+            document.getElementById("profile-name-val").innerText = loggedInStudent.name;
+            document.getElementById("profile-roll-val").innerText = loggedInStudent.roll;
+            document.getElementById("profile-div-val").innerText = "Division " + loggedInStudent.div;
+            document.getElementById("profile-group-val").innerText = "Group " + (loggedInStudent.group || "N/A");
+            document.getElementById("profile-elective-val").innerText = loggedInStudent.elective || "None Allocated";
+
+            // Highlight Today's Chip
+            setDefaultDay();
+            renderMobileCards();
+        }
+
+        function switchProfile() {
+            localStorage.removeItem("profile");
+            loggedInStudent = null;
+            document.getElementById("login-screen").style.display = "flex";
+            document.getElementById("roll-number-input").value = "";
+            document.getElementById("d2d-group-container").classList.remove("show");
+            toggleDrawer(false);
+            setupLoginWatchers();
+        }
+
+        function toggleDrawer(open) {
+            const overlay = document.getElementById("drawer-overlay");
+            if (open) {
+                overlay.classList.add("open");
+            } else {
+                overlay.classList.remove("open");
+            }
+        }
+
+        function setDefaultDay() {
+            const daysMap = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const today = daysMap[new Date().getDay()];
+            
+            // Mark Today Chip
+            const allChips = document.querySelectorAll(".day-chip");
+            allChips.forEach(c => c.classList.remove("is-today"));
+            const todayChip = document.getElementById(`chip-${today}`);
+            if (todayChip) {
+                todayChip.classList.add("is-today");
+            }
+
+            if (today !== "Sunday") {
+                currentDay = today;
+            }
+            highlightActiveDayChip(currentDay);
+        }
+
+        function highlightActiveDayChip(todayName) {
+            const daysOrder = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            daysOrder.forEach((dName) => {
+                const chip = document.getElementById(`chip-${dName}`);
+                if (!chip) return;
+                
+                if (dName === currentDay) {
+                    chip.classList.add("active");
+                    // Auto-center horizontal scroll view
+                    chip.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                } else {
+                    chip.classList.remove("active");
+                }
+            });
+        }
+
+        function selectDay(dayName) {
+            currentDay = dayName;
+            highlightActiveDayChip(dayName);
+            renderMobileCards();
+        }
+
+        // Render Cards Loop
+        function renderMobileCards() {
+            const container = document.getElementById("mobile-cards-view");
+            container.innerHTML = "";
+
+            if (!loggedInStudent) return;
+
+            if (currentDay === "Saturday") {
+                const nameStr = getFirstName(loggedInStudent.name);
+                container.innerHTML = `
+                    <div class="saturday-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 24px; padding: 1.75rem; border: 1px solid rgba(251, 191, 36, 0.15); box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 25px rgba(251, 191, 36, 0.05); text-align: center; color: #f8fafc; overflow: hidden; gap: 1.25rem; margin-top: 0.5rem;">
+                        <img src="f7012d0f3bcfe9c1a190a9a1850edc72.jpg" style="width: 100%; max-width: 500px; border-radius: 16px; border: 2px solid rgba(251, 191, 36, 0.2); box-shadow: 0 8px 25px rgba(0,0,0,0.5);" alt="Market Closed" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'500\' height=\'300\' style=\'background:%231f2937\'><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%2394a3b8\' font-size=\'24\'>🐺 Market Closed</text></svg>'">
+                        <div style="display: flex; flex-direction: column; gap: 0.6rem; padding: 0.25rem 0.2rem;">
+                            <div style="font-family: var(--font-primary); font-size: 1.25rem; font-weight: 800; color: #fbbf24; letter-spacing: 0.03em; text-transform: uppercase; text-shadow: 0 0 10px rgba(251, 191, 36, 0.15);">🐺 Stratton Oakmont — Market Closed</div>
+                            <div style="font-family: var(--font-secondary); font-size: 0.92rem; font-weight: 500; color: #94a3b8; line-height: 1.6; letter-spacing: 0.01em;">${nameStr}, the trading floor is closed for the weekend. No classes are scheduled for Saturday and Sunday. Lectures will resume on Monday at 8:00 AM.</div>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+
+            const divKey = "div" + loggedInStudent.div;
+            const fullDaySchedule = schedules[divKey][currentDay] || [];
+            
+            // Filter schedule based on student's specific group and elective allocations
+            const studentSchedule = fullDaySchedule.filter(slot => {
+                // If it is a lab, verify group matching (e.g. "Group A1")
+                if (slot.type === "lab" && slot.subject.includes("Group")) {
+                    const match = slot.subject.match(/Group\s+(A\d+)/);
+                    if (match && match[1] !== loggedInStudent.group) {
+                        return false;
+                    }
+                }
+                
+                // If it is a core class, it applies to all groups (e.g. "A1A2A3" or similar)
+                // If it is Elective 2, match elective name
+                if (slot.type === "elective2" && slot.subject !== loggedInStudent.elective) {
+                    return false;
+                }
+                
+                return true;
+            });
+
+            if (studentSchedule.length === 0) {
+                container.innerHTML = `
+                    <div class="mobile-card is-break">
+                        <div class="card-title">☕ No Classes Scheduled</div>
+                    </div>
+                `;
+                return;
+            }
+
+            // Sort schedule by start time minutes
+            const sortedSchedule = studentSchedule.sort((a, b) => {
+                const parseStart = (t) => {
+                    const timeRange = t.split(" to ");
+                    if (timeRange.length !== 2) return 0;
+                    const parts = timeRange[0].split(/[.:]/);
+                    let h = parseInt(parts[0]);
+                    let m = parts.length > 1 ? parseInt(parts[1]) : 0;
+                    // Account for PM slots
+                    if (h < 8) h += 12;
+                    return h * 60 + m;
+                };
+                return parseStart(a.time) - parseStart(b.time);
+            });
+
+            // Helper to convert slot time to 12-hour format label
+            const get12HourLabel = (timeStr) => {
+                const timeRange = timeStr.split(" to ");
+                if (timeRange.length !== 2) return timeStr;
+                
+                const parsePart = (part) => {
+                    const parts = part.split(/[.:]/);
+                    let h = parseInt(parts[0]);
+                    let m = parts.length > 1 ? parts[1].trim() : "00";
+                    if (m.length === 1) m = "0" + m;
+                    
+                    const ampm = (h >= 12 || h < 8) ? "PM" : "AM";
+                    if (h > 12) h -= 12;
+                    if (h === 0) h = 12;
+                    return `${h}:${m} ${ampm}`;
+                };
+
+                return `${parsePart(timeRange[0])} – ${parsePart(timeRange[1])}`;
+            };
+
+            sortedSchedule.forEach(slot => {
+                const card = document.createElement("div");
+                const subClass = subjectClasses[slot.code] || "cdc";
+                card.className = `mobile-card ${subClass}`;
+                card.id = `card-${slot.time.replace(/\s+/g, "")}`;
+
+                // Left accent bar
+                const leftBar = document.createElement("div");
+                leftBar.className = "card-left-bar";
+                card.appendChild(leftBar);
+
+                // Time slot
+                const timeDiv = document.createElement("div");
+                timeDiv.className = "card-time-slot";
+                timeDiv.innerText = get12HourLabel(slot.time);
+                card.appendChild(timeDiv);
+
+                // Subject row
+                const subjectRow = document.createElement("div");
+                subjectRow.className = "card-subject-row";
+
+                const subjectName = document.createElement("div");
+                subjectName.className = "card-subject-name";
+                // Strip group suffix from card display to keep it clean
+                subjectName.innerText = slot.subject.split(" (Group")[0];
+                subjectRow.appendChild(subjectName);
+
+                const subjectCode = document.createElement("div");
+                subjectCode.className = "card-subject-code";
+                subjectCode.innerText = slot.code;
+                subjectRow.appendChild(subjectCode);
+
+                card.appendChild(subjectRow);
+
+                // Badges row
+                const badgeRow = document.createElement("div");
+                badgeRow.className = "card-badge-row";
+
+                // Subject type badge
+                const catBadge = document.createElement("span");
+                catBadge.className = "badge-pill cat";
+                catBadge.innerText = slot.type === "lab" ? "Laboratory" : slot.type.startsWith("elective") ? "Elective" : "Core Lecture";
+                badgeRow.appendChild(catBadge);
+
+                // Room badge
+                if (slot.room && slot.room !== "-") {
+                    const roomBadge = document.createElement("span");
+                    roomBadge.className = "badge-pill room";
+                    roomBadge.innerText = "Room " + slot.room;
+                    badgeRow.appendChild(roomBadge);
+                }
+
+                // Faculty badge
+                if (slot.faculty && slot.faculty !== "-") {
+                    const facBadge = document.createElement("span");
+                    facBadge.className = "badge-pill faculty";
+                    facBadge.innerText = slot.faculty;
+                    badgeRow.appendChild(facBadge);
+                }
+
+                card.appendChild(badgeRow);
+                container.appendChild(card);
+            });
+
+            // Force update dynamic positions
+            updateActiveStates();
+        }
+
+        // Live Tracker and Next Class Preview
+        function updateActiveStates() {
+            if (!loggedInStudent) return;
+
+            const now = new Date();
+            const daysMap = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const isToday = (daysMap[now.getDay()] === currentDay);
+            const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+            // Reset next class widget
+            const nextClassBox = document.getElementById("next-class-box");
+            nextClassBox.style.display = "none";
+
+            // If not displaying today's schedule, reset card states
+            const allCards = document.querySelectorAll(".mobile-card");
+            allCards.forEach(c => {
+                c.classList.remove("is-currently-active");
+                const oldBadge = c.querySelector(".live-indicator-badge");
+                if (oldBadge) oldBadge.remove();
+            });
+
+            if (!isToday || currentDay === "Saturday") return;
+
+            const divKey = "div" + loggedInStudent.div;
+            const fullDaySchedule = schedules[divKey][currentDay] || [];
+            
+            const studentSchedule = fullDaySchedule.filter(slot => {
+                if (slot.type === "lab" && slot.subject.includes("Group")) {
+                    const match = slot.subject.match(/Group\s+(A\d+)/);
+                    if (match && match[1] !== loggedInStudent.group) return false;
+                }
+                if (slot.type === "elective2" && slot.subject !== loggedInStudent.elective) return false;
+                return true;
+            });
+
+            // Convert slots into minutes
+            const parseMinutes = (t) => {
+                const parts = t.split(/[.:]/);
+                let h = parseInt(parts[0]);
+                let m = parts.length > 1 ? parseInt(parts[1]) : 0;
+                if (h < 8) h += 12;
+                return h * 60 + m;
+            };
+
+            const slotsWithMin = studentSchedule.map(slot => {
+                const timeRange = slot.time.split(" to ");
+                return {
+                    slot,
+                    start: parseMinutes(timeRange[0]),
+                    end: parseMinutes(timeRange[1])
+                };
+            }).sort((a, b) => a.start - b.start);
+
+            // 1. Mark Live Card
+            let activeSlotFound = false;
+            slotsWithMin.forEach(item => {
+                const cardId = `card-${item.slot.time.replace(/\s+/g, "")}`;
+                const card = document.getElementById(cardId);
+                if (!card) return;
+
+                if (currentMinutes >= item.start && currentMinutes < item.end) {
+                    card.classList.add("is-currently-active");
+                    activeSlotFound = true;
+                    
+                    // Add live pulse dot badge if not present
+                    if (!card.querySelector(".live-indicator-badge")) {
+                        const badge = document.createElement("span");
+                        badge.className = "live-indicator-badge";
+                        badge.innerHTML = '<span class="live-pulse-dot"></span>LIVE NOW';
+                        card.appendChild(badge);
+                    }
+                } else {
+                    card.classList.remove("is-currently-active");
+                    const oldBadge = card.querySelector(".live-indicator-badge");
+                    if (oldBadge) oldBadge.remove();
+                }
+            });
+
+            // 2. Resolve Next Class Preview
+            let nextItem = null;
+            for (let i = 0; i < slotsWithMin.length; i++) {
+                if (currentMinutes < slotsWithMin[i].start) {
+                    nextItem = slotsWithMin[i].slot;
+                    break;
+                }
+            }
+
+            if (nextItem) {
+                nextClassBox.style.display = "block";
+                document.getElementById("next-class-name").innerText = nextItem.subject.split(" (Group")[0];
+                document.getElementById("next-class-meta").innerText = nextItem.code;
+                
+                // Helper to convert single slot time
+                const formatTimeLabel = (timeStr) => {
+                    const timeRange = timeStr.split(" to ");
+                    if (timeRange.length !== 2) return timeStr;
+                    
+                    const parsePart = (part) => {
+                        const parts = part.split(/[.:]/);
+                        let h = parseInt(parts[0]);
+                        let m = parts.length > 1 ? parts[1].trim() : "00";
+                        if (m.length === 1) m = "0" + m;
+                        
+                        const ampm = (h >= 12 || h < 8) ? "PM" : "AM";
+                        if (h > 12) h -= 12;
+                        if (h === 0) h = 12;
+                        return `${h}:${m} ${ampm}`;
+                    };
+
+                    return `${parsePart(timeRange[0])} – ${parsePart(timeRange[1])}`;
+                };
+
+                document.getElementById("next-class-time").innerText = formatTimeLabel(nextItem.time);
+            }
+        }
+    </script>
+</body>
+</html>

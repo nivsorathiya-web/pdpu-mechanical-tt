@@ -1,0 +1,1038 @@
+{
+    "div1": {
+        "Monday": [
+            {
+                "time": "08:00-09:00",
+                "subject": "Modelling and Control of Robotic Systems (P)",
+                "code": "24MSME401P",
+                "room": "E002",
+                "faculty": "NIS",
+                "type": "elective1"
+            },
+            {
+                "time": "09:00-10:55",
+                "subject": "Civic Duties and Citizenship",
+                "code": "CDC",
+                "room": "E202",
+                "faculty": "CDCT",
+                "type": "core"
+            },
+            {
+                "time": "11:10-12:05",
+                "subject": "Dynamics of Machine",
+                "code": "24ME302T",
+                "room": "E201",
+                "faculty": "PVK",
+                "type": "core"
+            },
+            {
+                "time": "12:10-13:05",
+                "subject": "Manufacturing Process - I",
+                "code": "24ME303T",
+                "room": "E201",
+                "faculty": "JAY",
+                "type": "core"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Fluid Machinery",
+                "code": "24ME333T",
+                "room": "E201",
+                "faculty": "ASR",
+                "type": "elective2"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Introduction to Composite Materials",
+                "code": "24ME331T",
+                "room": "E202",
+                "faculty": "PVG",
+                "type": "elective2"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Renewable & Sustainable Energy Technologies",
+                "code": "24ME332T",
+                "room": "E105",
+                "faculty": "RSX",
+                "type": "elective2"
+            },
+            {
+                "time": "15:10-16:05",
+                "subject": "Library/Cultural Activity",
+                "code": "Library",
+                "room": "-",
+                "faculty": "-",
+                "type": "break"
+            },
+            {
+                "time": "17:15-18:10",
+                "subject": "Manufacturing Process - I - Lab (Group A1)",
+                "code": "24ME303P",
+                "room": "C014B",
+                "faculty": "KSN",
+                "type": "lab"
+            }
+        ],
+        "Tuesday": [
+            {
+                "time": "08:00-09:00",
+                "subject": "Vehicle Dynamics",
+                "code": "25MSME301T",
+                "room": "E003",
+                "faculty": "MJK",
+                "type": "elective1"
+            },
+            {
+                "time": "08:00-09:00",
+                "subject": "Modelling and Control of Robotic Systems",
+                "code": "24MSME401T",
+                "room": "E002",
+                "faculty": "NIS",
+                "type": "elective1"
+            },
+            {
+                "time": "09:00-09:55",
+                "subject": "Heat Transfer",
+                "code": "24ME301T",
+                "room": "E201",
+                "faculty": "RSP",
+                "type": "core"
+            },
+            {
+                "time": "10:00-10:55",
+                "subject": "Engineering Economics",
+                "code": "24HS301T",
+                "room": "E201",
+                "faculty": "SBO",
+                "type": "core"
+            },
+            {
+                "time": "11:10-13:05",
+                "subject": "Dynamics of Machine - Lab (Group A2)",
+                "code": "24ME302P",
+                "room": "C014B",
+                "faculty": "JAY",
+                "type": "lab"
+            },
+            {
+                "time": "11:10-13:05",
+                "subject": "Manufacturing Process - I - Lab (Group A3)",
+                "code": "24ME303P",
+                "room": "E208",
+                "faculty": "PVK",
+                "type": "lab"
+            },
+            {
+                "time": "11:10-13:05",
+                "subject": "Heat Transfer Lab (Group A1)",
+                "code": "24ME301P",
+                "room": "E008",
+                "faculty": "NAH",
+                "type": "lab"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Renewable & Sustainable Energy Technologies",
+                "code": "24ME332T",
+                "room": "E105",
+                "faculty": "RSX",
+                "type": "elective2"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Fluid Machinery",
+                "code": "24ME333T",
+                "room": "E201",
+                "faculty": "ASR",
+                "type": "elective2"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Introduction to Composite Materials",
+                "code": "24ME331T",
+                "room": "E202",
+                "faculty": "PVG",
+                "type": "elective2"
+            }
+        ],
+        "Wednesday": [
+            {
+                "time": "08:00-09:00",
+                "subject": "Modelling and Control of Robotic Systems",
+                "code": "24MSME401T",
+                "room": "E002",
+                "faculty": "NIS",
+                "type": "elective1"
+            },
+            {
+                "time": "08:00-09:00",
+                "subject": "Vehicle Dynamics",
+                "code": "25MSME301T",
+                "room": "E003",
+                "faculty": "MJK",
+                "type": "elective1"
+            },
+            {
+                "time": "09:00-09:55",
+                "subject": "Heat Transfer",
+                "code": "24ME301T",
+                "room": "E201",
+                "faculty": "RSP",
+                "type": "core"
+            },
+            {
+                "time": "10:00-10:55",
+                "subject": "Dynamics of Machine",
+                "code": "24ME302T",
+                "room": "E201",
+                "faculty": "PVK",
+                "type": "core"
+            },
+            {
+                "time": "11:10-12:05",
+                "subject": "Library/Cultural Activity",
+                "code": "Library",
+                "room": "-",
+                "faculty": "-",
+                "type": "break"
+            },
+            {
+                "time": "12:10-13:05",
+                "subject": "Manufacturing Process - I",
+                "code": "24ME303T",
+                "room": "E201",
+                "faculty": "JAY",
+                "type": "core"
+            }
+        ],
+        "Thursday": [
+            {
+                "time": "08:00-09:00",
+                "subject": "Vehicle Dynamics",
+                "code": "25MSME301T",
+                "room": "E003",
+                "faculty": "MJK",
+                "type": "elective1"
+            },
+            {
+                "time": "08:00-09:00",
+                "subject": "Modelling and Control of Robotic Systems",
+                "code": "24MSME401T",
+                "room": "E002",
+                "faculty": "NIS",
+                "type": "elective1"
+            },
+            {
+                "time": "09:00-09:55",
+                "subject": "Heat Transfer",
+                "code": "24ME301T",
+                "room": "E202",
+                "faculty": "RSP",
+                "type": "core"
+            },
+            {
+                "time": "10:00-10:55",
+                "subject": "Engineering Economics",
+                "code": "24HS301T",
+                "room": "E202",
+                "faculty": "SBO",
+                "type": "core"
+            },
+            {
+                "time": "11:10-13:05",
+                "subject": "Manufacturing Process - I - Lab (Group A3)",
+                "code": "24ME303P",
+                "room": "C014B",
+                "faculty": "RAGU",
+                "type": "lab"
+            },
+            {
+                "time": "11:10-13:05",
+                "subject": "Heat Transfer Lab (Group A2)",
+                "code": "24ME301P",
+                "room": "E008",
+                "faculty": "RAD",
+                "type": "lab"
+            },
+            {
+                "time": "11:10-13:05",
+                "subject": "Dynamics of Machine - Lab (Group A1)",
+                "code": "24ME302P",
+                "room": "E208",
+                "faculty": "PVK",
+                "type": "lab"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Dynamics of Machine",
+                "code": "24ME302T",
+                "room": "E202",
+                "faculty": "PVK",
+                "type": "core"
+            }
+        ],
+        "Friday": [
+            {
+                "time": "08:00-09:00",
+                "subject": "Modelling and Control of Robotic Systems (P)",
+                "code": "24MSME401P",
+                "room": "E002",
+                "faculty": "NIS",
+                "type": "elective1"
+            },
+            {
+                "time": "09:00-09:55",
+                "subject": "Manufacturing Process - I",
+                "code": "24ME303T",
+                "room": "E105",
+                "faculty": "JAY",
+                "type": "core"
+            },
+            {
+                "time": "10:00-10:55",
+                "subject": "Engineering Economics",
+                "code": "24HS301T",
+                "room": "E105",
+                "faculty": "SBO",
+                "type": "core"
+            },
+            {
+                "time": "11:10-13:05",
+                "subject": "Heat Transfer Lab (Group A3)",
+                "code": "24ME301P",
+                "room": "E008",
+                "faculty": "RAD",
+                "type": "lab"
+            },
+            {
+                "time": "11:10-13:05",
+                "subject": "Dynamics of Machine - Lab (Group A2)",
+                "code": "24ME302P",
+                "room": "E208",
+                "faculty": "PVK",
+                "type": "lab"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Fluid Machinery",
+                "code": "24ME333T",
+                "room": "E201",
+                "faculty": "ASR",
+                "type": "elective2"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Introduction to Composite Materials",
+                "code": "24ME331T",
+                "room": "E202",
+                "faculty": "PVG",
+                "type": "elective2"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Renewable & Sustainable Energy Technologies",
+                "code": "24ME332T",
+                "room": "E105",
+                "faculty": "RSX",
+                "type": "elective2"
+            },
+            {
+                "time": "15:10-16:05",
+                "subject": "Civic Duties and Citizenship",
+                "code": "CDC",
+                "room": "E105",
+                "faculty": "CDCT",
+                "type": "core"
+            }
+        ]
+    },
+    "div2": {
+        "Monday": [
+            {
+                "time": "08:00-09:00",
+                "subject": "Modelling and Control of Robotic Systems (P)",
+                "code": "24MSME401P",
+                "room": "E002",
+                "faculty": "NIS",
+                "type": "elective1"
+            },
+            {
+                "time": "09:00-10:55",
+                "subject": "Dynamics of Machine - Lab (Group A6)",
+                "code": "24ME302P",
+                "room": "E208",
+                "faculty": "NIS",
+                "type": "lab"
+            },
+            {
+                "time": "09:00-10:55",
+                "subject": "Heat Transfer Lab (Group A4)",
+                "code": "24ME301P",
+                "room": "E008",
+                "faculty": "RAD",
+                "type": "lab"
+            },
+            {
+                "time": "09:00-10:55",
+                "subject": "Manufacturing Process - I - Lab (Group A5)",
+                "code": "24ME303P",
+                "room": "C014B",
+                "faculty": "KSN",
+                "type": "lab"
+            },
+            {
+                "time": "11:10-12:05",
+                "subject": "Dynamics of Machine",
+                "code": "24ME302T",
+                "room": "E202",
+                "faculty": "NIS",
+                "type": "core"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Fluid Machinery",
+                "code": "24ME333T",
+                "room": "E201",
+                "faculty": "ASR",
+                "type": "elective2"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Introduction to Composite Materials",
+                "code": "24ME331T",
+                "room": "E202",
+                "faculty": "PVG",
+                "type": "elective2"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Renewable & Sustainable Energy Technologies",
+                "code": "24ME332T",
+                "room": "E105",
+                "faculty": "RSX",
+                "type": "elective2"
+            }
+        ],
+        "Tuesday": [
+            {
+                "time": "08:00-09:00",
+                "subject": "Vehicle Dynamics",
+                "code": "25MSME301T",
+                "room": "E003",
+                "faculty": "MJK",
+                "type": "elective1"
+            },
+            {
+                "time": "08:00-09:00",
+                "subject": "Modelling and Control of Robotic Systems",
+                "code": "24MSME401T",
+                "room": "E002",
+                "faculty": "NIS",
+                "type": "elective1"
+            },
+            {
+                "time": "09:00-09:55",
+                "subject": "Engineering Economics",
+                "code": "24HS301T",
+                "room": "E101",
+                "faculty": "SBO",
+                "type": "core"
+            },
+            {
+                "time": "10:00-10:55",
+                "subject": "Library/Cultural Activity",
+                "code": "Library",
+                "room": "-",
+                "faculty": "-",
+                "type": "break"
+            },
+            {
+                "time": "11:10-12:05",
+                "subject": "Library/Cultural Activity",
+                "code": "Library",
+                "room": "-",
+                "faculty": "-",
+                "type": "break"
+            },
+            {
+                "time": "12:10-13:05",
+                "subject": "Fluid Machinery",
+                "code": "24ME333T",
+                "room": "E105",
+                "faculty": "SSK",
+                "type": "elective2"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Renewable & Sustainable Energy Technologies",
+                "code": "24ME332T",
+                "room": "E105",
+                "faculty": "RSX",
+                "type": "elective2"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Fluid Machinery",
+                "code": "24ME333T",
+                "room": "E201",
+                "faculty": "ASR",
+                "type": "elective2"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Introduction to Composite Materials",
+                "code": "24ME331T",
+                "room": "E202",
+                "faculty": "PVG",
+                "type": "elective2"
+            }
+        ],
+        "Wednesday": [
+            {
+                "time": "08:00-09:00",
+                "subject": "Modelling and Control of Robotic Systems",
+                "code": "24MSME401T",
+                "room": "E002",
+                "faculty": "NIS",
+                "type": "elective1"
+            },
+            {
+                "time": "08:00-09:00",
+                "subject": "Vehicle Dynamics",
+                "code": "25MSME301T",
+                "room": "E003",
+                "faculty": "MJK",
+                "type": "elective1"
+            },
+            {
+                "time": "09:00-10:55",
+                "subject": "Heat Transfer Lab (Group A5)",
+                "code": "24ME301P",
+                "room": "E008",
+                "faculty": "RAD",
+                "type": "lab"
+            },
+            {
+                "time": "09:00-10:55",
+                "subject": "Dynamics of Machine - Lab (Group A4)",
+                "code": "24ME302P",
+                "room": "E208",
+                "faculty": "NIS",
+                "type": "lab"
+            },
+            {
+                "time": "09:00-10:55",
+                "subject": "Manufacturing Process - I - Lab (Group A6)",
+                "code": "24ME303P",
+                "room": "C014B",
+                "faculty": "KSN",
+                "type": "lab"
+            },
+            {
+                "time": "11:10-12:05",
+                "subject": "Library/Cultural Activity",
+                "code": "Library",
+                "room": "-",
+                "faculty": "-",
+                "type": "break"
+            },
+            {
+                "time": "12:10-13:05",
+                "subject": "Dynamics of Machine",
+                "code": "24ME302T",
+                "room": "E202",
+                "faculty": "SSK",
+                "type": "core"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Manufacturing Process - I",
+                "code": "24ME303T",
+                "room": "E105",
+                "faculty": "KSN",
+                "type": "core"
+            },
+            {
+                "time": "16:15-17:10",
+                "subject": "Civic Duties and Citizenship",
+                "code": "CDC",
+                "room": "E105",
+                "faculty": "CDCT",
+                "type": "core"
+            }
+        ],
+        "Thursday": [
+            {
+                "time": "08:00-09:00",
+                "subject": "Vehicle Dynamics",
+                "code": "25MSME301T",
+                "room": "E003",
+                "faculty": "MJK",
+                "type": "elective1"
+            },
+            {
+                "time": "08:00-09:00",
+                "subject": "Modelling and Control of Robotic Systems",
+                "code": "24MSME401T",
+                "room": "E002",
+                "faculty": "NIS",
+                "type": "elective1"
+            },
+            {
+                "time": "09:00-09:55",
+                "subject": "Engineering Economics",
+                "code": "24HS301T",
+                "room": "E105",
+                "faculty": "SBO",
+                "type": "core"
+            },
+            {
+                "time": "10:00-10:55",
+                "subject": "Dynamics of Machine",
+                "code": "24ME302T",
+                "room": "E105",
+                "faculty": "NIS",
+                "type": "core"
+            },
+            {
+                "time": "11:10-13:05",
+                "subject": "Heat Transfer Lab (Group A6)",
+                "code": "24ME301P",
+                "room": "E008",
+                "faculty": "RAD",
+                "type": "lab"
+            },
+            {
+                "time": "11:10-13:05",
+                "subject": "Manufacturing Process - I - Lab (Group A4)",
+                "code": "24ME303P",
+                "room": "C014B",
+                "faculty": "KSN",
+                "type": "lab"
+            },
+            {
+                "time": "11:10-13:05",
+                "subject": "Dynamics of Machine - Lab (Group A5)",
+                "code": "24ME302P",
+                "room": "E208",
+                "faculty": "VVY",
+                "type": "lab"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Manufacturing Process - I",
+                "code": "24ME303T",
+                "room": "E105",
+                "faculty": "NIS",
+                "type": "core"
+            },
+            {
+                "time": "16:15-17:10",
+                "subject": "Civic Duties and Citizenship",
+                "code": "CDC",
+                "room": "E103",
+                "faculty": "CDCT",
+                "type": "core"
+            }
+        ],
+        "Friday": [
+            {
+                "time": "08:00-09:00",
+                "subject": "Modelling and Control of Robotic Systems (P)",
+                "code": "24MSME401P",
+                "room": "E002",
+                "faculty": "NIS",
+                "type": "elective1"
+            },
+            {
+                "time": "09:00-09:55",
+                "subject": "Engineering Economics",
+                "code": "24HS301T",
+                "room": "E202",
+                "faculty": "SBO",
+                "type": "core"
+            },
+            {
+                "time": "10:00-10:55",
+                "subject": "Dynamics of Machine",
+                "code": "24ME301T",
+                "room": "E202",
+                "faculty": "SSK",
+                "type": "core"
+            },
+            {
+                "time": "11:10-12:05",
+                "subject": "Manufacturing Process - I",
+                "code": "24ME303T",
+                "room": "E202",
+                "faculty": "KSN",
+                "type": "core"
+            },
+            {
+                "time": "12:10-13:05",
+                "subject": "Dynamics of Machine",
+                "code": "24ME302T",
+                "room": "E201",
+                "faculty": "NIS",
+                "type": "core"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Fluid Machinery",
+                "code": "24ME333T",
+                "room": "E201",
+                "faculty": "ASR",
+                "type": "elective2"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Introduction to Composite Materials",
+                "code": "24ME331T",
+                "room": "E202",
+                "faculty": "PVG",
+                "type": "elective2"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Renewable & Sustainable Energy Technologies",
+                "code": "24ME332T",
+                "room": "E105",
+                "faculty": "RSX",
+                "type": "elective2"
+            }
+        ]
+    },
+    "div3": {
+        "Monday": [
+            {
+                "time": "08:00-09:00",
+                "subject": "Modelling and Control of Robotic Systems (P)",
+                "code": "24MSME401P",
+                "room": "E002",
+                "faculty": "NIS",
+                "type": "elective1"
+            },
+            {
+                "time": "09:00-09:55",
+                "subject": "Introduction to Composite Materials",
+                "code": "24ME331T",
+                "room": "E202",
+                "faculty": "NAH",
+                "type": "elective2"
+            },
+            {
+                "time": "11:10-13:05",
+                "subject": "Manufacturing Process - I - Lab (Group A8)",
+                "code": "24ME303P",
+                "room": "C014B",
+                "faculty": "KSN",
+                "type": "lab"
+            },
+            {
+                "time": "11:10-13:05",
+                "subject": "Dynamics of Machine - Lab (Group A9)",
+                "code": "24ME302P",
+                "room": "E208",
+                "faculty": "NAG",
+                "type": "lab"
+            },
+            {
+                "time": "11:10-13:05",
+                "subject": "Heat Transfer Lab (Group A7)",
+                "code": "24ME301P",
+                "room": "E008",
+                "faculty": "NAH",
+                "type": "lab"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Fluid Machinery",
+                "code": "24ME333T",
+                "room": "E201",
+                "faculty": "ASR",
+                "type": "elective2"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Introduction to Composite Materials",
+                "code": "24ME331T",
+                "room": "E202",
+                "faculty": "PVG",
+                "type": "elective2"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Renewable & Sustainable Energy Technologies",
+                "code": "24ME332T",
+                "room": "E105",
+                "faculty": "RSX",
+                "type": "elective2"
+            },
+            {
+                "time": "15:10-16:05",
+                "subject": "Introduction to Composite Materials",
+                "code": "24ME331T",
+                "room": "E105",
+                "faculty": "NAG",
+                "type": "elective2"
+            }
+        ],
+        "Tuesday": [
+            {
+                "time": "08:00-09:00",
+                "subject": "Vehicle Dynamics",
+                "code": "25MSME301T",
+                "room": "E003",
+                "faculty": "MJK",
+                "type": "elective1"
+            },
+            {
+                "time": "08:00-09:00",
+                "subject": "Modelling and Control of Robotic Systems",
+                "code": "24MSME401T",
+                "room": "E002",
+                "faculty": "NIS",
+                "type": "elective1"
+            },
+            {
+                "time": "12:10-13:05",
+                "subject": "Dynamics of Machine",
+                "code": "24ME302T",
+                "room": "E105",
+                "faculty": "NAG",
+                "type": "core"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Renewable & Sustainable Energy Technologies",
+                "code": "24ME332T",
+                "room": "E105",
+                "faculty": "RSX",
+                "type": "elective2"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Fluid Machinery",
+                "code": "24ME333T",
+                "room": "E201",
+                "faculty": "ASR",
+                "type": "elective2"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Introduction to Composite Materials",
+                "code": "24ME331T",
+                "room": "E202",
+                "faculty": "PVG",
+                "type": "elective2"
+            },
+            {
+                "time": "15:10-16:05",
+                "subject": "Dynamics of Machine",
+                "code": "24ME302T",
+                "room": "E105",
+                "faculty": "KSN",
+                "type": "core"
+            },
+            {
+                "time": "16:15-17:10",
+                "subject": "Civic Duties and Citizenship",
+                "code": "CDC",
+                "room": "E105",
+                "faculty": "CDCT",
+                "type": "core"
+            }
+        ],
+        "Wednesday": [
+            {
+                "time": "08:00-09:00",
+                "subject": "Modelling and Control of Robotic Systems",
+                "code": "24MSME401T",
+                "room": "E002",
+                "faculty": "NIS",
+                "type": "elective1"
+            },
+            {
+                "time": "08:00-09:00",
+                "subject": "Vehicle Dynamics",
+                "code": "25MSME301T",
+                "room": "E003",
+                "faculty": "MJK",
+                "type": "elective1"
+            },
+            {
+                "time": "09:00-09:55",
+                "subject": "Manufacturing Process - I",
+                "code": "24ME303T",
+                "room": "E201",
+                "faculty": "NAH",
+                "type": "core"
+            },
+            {
+                "time": "10:00-10:55",
+                "subject": "Engineering Economics",
+                "code": "24HS301T",
+                "room": "E202",
+                "faculty": "NIJO",
+                "type": "core"
+            },
+            {
+                "time": "11:10-12:05",
+                "subject": "Engineering Economics",
+                "code": "24HS301T",
+                "room": "E202",
+                "faculty": "NIJO",
+                "type": "core"
+            },
+            {
+                "time": "12:10-13:05",
+                "subject": "Manufacturing Process - I",
+                "code": "24ME303T",
+                "room": "E202",
+                "faculty": "KSN",
+                "type": "core"
+            }
+        ],
+        "Thursday": [
+            {
+                "time": "08:00-09:00",
+                "subject": "Vehicle Dynamics",
+                "code": "25MSME301T",
+                "room": "E003",
+                "faculty": "MJK",
+                "type": "elective1"
+            },
+            {
+                "time": "08:00-09:00",
+                "subject": "Modelling and Control of Robotic Systems",
+                "code": "24MSME401T",
+                "room": "E002",
+                "faculty": "NIS",
+                "type": "elective1"
+            },
+            {
+                "time": "09:00-09:55",
+                "subject": "Manufacturing Process - I - Lab (Group A9)",
+                "code": "24ME303P",
+                "room": "C014B",
+                "faculty": "RAGU",
+                "type": "lab"
+            },
+            {
+                "time": "09:00-09:55",
+                "subject": "Heat Transfer Lab (Group A8)",
+                "code": "24ME301P",
+                "room": "E008",
+                "faculty": "NAH",
+                "type": "lab"
+            },
+            {
+                "time": "09:00-09:55",
+                "subject": "Dynamics of Machine - Lab (Group A7)",
+                "code": "24ME302P",
+                "room": "E208",
+                "faculty": "NAG",
+                "type": "lab"
+            },
+            {
+                "time": "10:00-10:55",
+                "subject": "Manufacturing Process - I",
+                "code": "24ME303T",
+                "room": "E201",
+                "faculty": "KSN",
+                "type": "core"
+            },
+            {
+                "time": "11:10-12:05",
+                "subject": "Engineering Economics",
+                "code": "24HS301T",
+                "room": "E105",
+                "faculty": "NIJO",
+                "type": "core"
+            },
+            {
+                "time": "12:10-13:05",
+                "subject": "Library/Cultural Activity",
+                "code": "Library",
+                "room": "-",
+                "faculty": "-",
+                "type": "break"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Manufacturing Process - I",
+                "code": "24ME303T",
+                "room": "E105",
+                "faculty": "NAH",
+                "type": "core"
+            },
+            {
+                "time": "16:15-17:10",
+                "subject": "Civic Duties and Citizenship",
+                "code": "CDC",
+                "room": "E103",
+                "faculty": "CDCT",
+                "type": "core"
+            }
+        ],
+        "Friday": [
+            {
+                "time": "08:00-09:00",
+                "subject": "Modelling and Control of Robotic Systems (P)",
+                "code": "24MSME401P",
+                "room": "E002",
+                "faculty": "NIS",
+                "type": "elective1"
+            },
+            {
+                "time": "09:00-09:55",
+                "subject": "Dynamics of Machine",
+                "code": "24ME302T",
+                "room": "E008",
+                "faculty": "RAD",
+                "type": "core"
+            },
+            {
+                "time": "10:00-10:55",
+                "subject": "Library/Cultural Activity",
+                "code": "Library",
+                "room": "-",
+                "faculty": "-",
+                "type": "break"
+            },
+            {
+                "time": "11:10-12:05",
+                "subject": "Dynamics of Machine",
+                "code": "24ME302T",
+                "room": "E201",
+                "faculty": "NAG",
+                "type": "core"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Fluid Machinery",
+                "code": "24ME333T",
+                "room": "E201",
+                "faculty": "ASR",
+                "type": "elective2"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Introduction to Composite Materials",
+                "code": "24ME331T",
+                "room": "E202",
+                "faculty": "PVG",
+                "type": "elective2"
+            },
+            {
+                "time": "14:10-15:05",
+                "subject": "Renewable & Sustainable Energy Technologies",
+                "code": "24ME332T",
+                "room": "E105",
+                "faculty": "RSX",
+                "type": "elective2"
+            }
+        ]
+    }
+}
