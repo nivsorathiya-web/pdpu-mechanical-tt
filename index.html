@@ -5613,13 +5613,7 @@
 
         // Return if slot is lunch based on division, day, and time slot
         function isLunchSlot(division, day, slot) {
-            if (division === "1") {
-                if (day === "Friday") return slot === "1:10 to 2:05";
-                return slot === "12.10 to 1.05";
-            } else {
-                if (day === "Wednesday" || day === "Friday") return slot === "1:10 to 2:05";
-                return slot === "12.10 to 1.05";
-            }
+            return slot === "1:10 to 2:05";
         }
 
         // Main Refresh Function
