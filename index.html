@@ -1793,7 +1793,7 @@
                 </div>
             </div>
             <div class="live-current-headline" id="live-headline">
-                🟢 Today's Schedule Active
+                🏎️ Weekend Pit Stop!
             </div>
             <div class="live-current-sub" id="live-subtext">
                 Checking current timetable for your division & group...
@@ -5876,6 +5876,9 @@ function updateLiveClockEngine() {
 
             const division = loggedInStudent ? loggedInStudent.div : 1;
             const group = loggedInStudent ? (loggedInStudent.group || 'A1') : 'A1';
+            const electiveKey = document.getElementById("elective-select") ? document.getElementById("elective-select").value : "FM";
+            const activeElectiveName = document.getElementById("elective-select") ? document.getElementById("elective-select").value : (loggedInStudent ? loggedInStudent.elective || "Fluid Machinery" : "Fluid Machinery");
+            const activeSchedule = schedules["div" + division] ? schedules["div" + division][group] : {};
 
             if (currentDayName === "Saturday" || currentDayName === "Sunday") {
                 headline.innerHTML = "🏎️ Weekend Pit Stop!";
@@ -5961,7 +5964,7 @@ function updateLiveClockEngine() {
             }
 
             if (activeMatch) {
-                if (activeMatch.isBreak) {
+                if (activeMatch.isBreak || activeMatch.breakType) {
                     headline.innerHTML = "🛠️ Quick Pit Stop";
                     subtext.innerText = `15-minute tire swap & cooling period! Classes resume shortly at ${activeMatch.end === 670 ? '11:10 AM' : '4:15 PM'}.`;
                     return;
@@ -5973,7 +5976,7 @@ function updateLiveClockEngine() {
                     return;
                 }
 
-                let cellData = activeSchedule[todayName] ? activeSchedule[todayName][activeMatch.slot] : null;
+                let cellData = daySched ? (daySched[activeMatch.slot] || daySched[activeMatch.slot.replace(/:/g, ".")] || daySched[activeMatch.slot.replace(/\./g, ":")]) : null;
 
                 if (cellData === "ELECTIVE") {
                     const electiveSchedKey = `${todayName}_${activeMatch.slot}`;
