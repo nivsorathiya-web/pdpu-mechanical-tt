@@ -5845,37 +5845,29 @@
 function updateLiveClockEngine() {
             const now = new Date();
             const daysMap = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-            const todayName = daysMap[now.getDay()];
-            const currentDayName = todayName;
+            const currentDayName = daysMap[now.getDay()];
+            const todayName = currentDayName; // alias for slot lookups
             
-            // Format Live Date & Time String
-            const options = { weekday: 'short', month: 'short', day: 'numeric' };
-            if (document.getElementById("live-date-str")) {
-                document.getElementById("live-date-str").innerText = now.toLocaleDateString('en-US', options);
-            }
-            
-            if (document.getElementById("live-clock-str")) {
-                document.getElementById("live-clock-str").innerText = now.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true });
-            }
-
-            const hours = now.getHours();
-            let greetingStr = "GOOD MORNING";
-            if (hours >= 12 && hours < 17) {
-                greetingStr = "GOOD AFTERNOON";
-            } else if (hours >= 17 && hours < 21) {
-                greetingStr = "GOOD EVENING";
-            } else {
-                greetingStr = "GOOD NIGHT";
-            }
-            const greetingName = loggedInStudent ? getFirstName(loggedInStudent.name) : "STUDENT";
-            const greetingElem = document.getElementById("live-greeting");
-            if (greetingElem) {
-                greetingElem.innerText = `${greetingStr}, ${greetingName}!`.toUpperCase();
-            }
-
+            const liveClock = document.getElementById("live-clock-str");
+            const liveDate = document.getElementById("live-date-str");
             const headline = document.getElementById("live-headline");
             const subtext = document.getElementById("live-subtext");
             const nextContainer = document.getElementById("live-next-container");
+
+            if (liveClock) {
+                let hrs = now.getHours();
+                let mins = now.getMinutes();
+                let ampm = hrs >= 12 ? 'PM' : 'AM';
+                hrs = hrs % 12;
+                hrs = hrs ? hrs : 12;
+                mins = mins < 10 ? '0' + mins : mins;
+                liveClock.innerText = `${hrs}:${mins} ${ampm}`;
+            }
+
+            if (liveDate) {
+                const options = { weekday: 'short', month: 'short', day: 'numeric' };
+                liveDate.innerText = now.toLocaleDateString('en-US', options);
+            }
 
             if (!headline || !subtext) return;
 
@@ -5883,53 +5875,50 @@ function updateLiveClockEngine() {
             if (_pCont) _pCont.style.display = "none";
 
             const division = loggedInStudent ? loggedInStudent.div : 1;
-            const group = loggedInStudent ? (loggedInStudent.group || (division == 1 ? 'A1' : 'A4')) : (division == 1 ? 'A1' : 'A4');
-            const electiveKey = document.getElementById("elective-select") ? document.getElementById("elective-select").value : "FM";
-            const activeElectiveName = electiveNames[electiveKey];
-            const divKey = "div" + division;
-            const activeSchedule = schedules[divKey][group];
+            const group = loggedInStudent ? (loggedInStudent.group || 'A1') : 'A1';
 
-            if (todayName === "Sunday" || todayName === "Saturday") {
+            if (currentDayName === "Saturday" || currentDayName === "Sunday") {
                 headline.innerHTML = "🏎️ Weekend Pit Stop!";
                 subtext.innerText = "No lectures scheduled today. Rest up & enjoy your weekend!";
                 if (nextContainer) nextContainer.style.display = "none";
                 return;
             }
 
+            if (currentDayName !== currentDay) {
+                headline.innerHTML = `📅 Viewing ${currentDay}'s Timetable`;
+                subtext.innerText = `Today is ${currentDayName}. Select ${currentDayName} tab to view active live status.`;
+                if (nextContainer) nextContainer.style.display = "none";
+                return;
+            }
+
             const currentMinutes = now.getHours() * 60 + now.getMinutes();
             const timeRanges = [
-                { slot: "8:00 AM - 9:00 AM", start: 480, end: 540, label: "8:00 AM – 9:00 AM" },
-                { slot: "9:00 AM - 10:00 AM", start: 540, end: 600, label: "9:00 AM – 10:00 AM" },
-                { slot: "10:00 AM - 11:00 AM", start: 600, end: 660, label: "10:00 AM – 11:00 AM" },
-                { slot: "11:00 AM - 12:00 PM", start: 660, end: 720, label: "11:00 AM – 12:00 PM" },
-                { slot: "12:00 PM - 1:00 PM", start: 720, end: 780, label: "12:00 PM – 1:00 PM" },
-                { slot: "1:00 PM - 2:00 PM", start: 780, end: 840, label: "1:00 PM – 2:00 PM" },
-                { slot: "2:00 PM - 3:00 PM", start: 840, end: 900, label: "2:00 PM – 3:00 PM" },
-                { slot: "3:00 PM - 4:00 PM", start: 900, end: 960, label: "3:00 PM – 4:00 PM" },
-                { slot: "4:00 PM - 5:00 PM", start: 960, end: 1020, label: "4:00 PM – 5:00 PM" },
-                { slot: "5:00 PM - 6:00 PM", start: 1020, end: 1080, label: "5:00 PM – 6:00 PM" }
+                { slot: "08:00 to 08:55", start: 480, end: 540, label: "8:00 AM – 8:55 AM" },
+                { slot: "9.00 to 9. 55", start: 540, end: 595, label: "9:00 AM – 9:55 AM" },
+                { slot: "10.00 to 10.55", start: 600, end: 655, label: "10:00 AM – 10:55 AM" },
+                { slot: "10:55 to 11:10", start: 655, end: 670, label: "10:55 AM – 11:10 AM", breakType: "short" },
+                { slot: "11.10 to 12.05", start: 670, end: 725, label: "11:10 AM – 12:05 PM" },
+                { slot: "12.10 to 1.05", start: 730, end: 785, label: "12:10 PM – 1:05 PM" },
+                { slot: "1.10 to 2.05", start: 785, end: 845, label: "1:10 PM – 2:05 PM" },
+                { slot: "2.10 to 3.05", start: 850, end: 905, label: "2:10 PM – 3:05 PM" },
+                { slot: "3.10 to 4.05", start: 910, end: 965, label: "3:10 PM – 4:05 PM" },
+                { slot: "4:05 to 4:15", start: 965, end: 975, label: "4:05 PM – 4:15 PM", breakType: "short" },
+                { slot: "4.15 to 5.10", start: 975, end: 1030, label: "4:15 PM – 5:10 PM" },
+                { slot: "5.15 to 6.10", start: 1035, end: 1090, label: "5:15 PM – 6:10 PM" }
             ];
+
+            const daySched = schedules[`div${division}`] ? schedules[`div${division}`][group][currentDay] : null;
 
             let nextClassMatch = null;
             let nextClassData = null;
 
-            if (activeSchedule && activeSchedule[todayName]) {
+            if (daySched) {
                 for (let range of timeRanges) {
-                    if (range.start > currentMinutes) {
-                        let data = activeSchedule[todayName] ? activeSchedule[todayName][range.slot] : null;
-                        if (data === "ELECTIVE") {
-                            const electiveSchedKey = `${todayName}_${range.slot}`;
-                            const electiveDetails = electiveSchedules[electiveKey] ? electiveSchedules[electiveKey][electiveSchedKey] : null;
-                            data = {
-                                title: activeElectiveName,
-                                code: electiveInfo[electiveKey] ? electiveInfo[electiveKey].code : "",
-                                room: electiveDetails ? electiveDetails.room : "—",
-                                prof: electiveDetails ? electiveDetails.prof : "—"
-                            };
-                        }
-                        if (data && typeof data === 'object' && data.title !== 'Lunch Break') {
+                    if (range.start > currentMinutes && !range.breakType) {
+                        const cell = daySched[range.slot] || daySched[range.slot.replace(/:/g, ".")] || daySched[range.slot.replace(/\./g, ":")];
+                        if (cell && typeof cell === 'object' && cell.title !== 'Lunch Break') {
                             nextClassMatch = range;
-                            nextClassData = data;
+                            nextClassData = cell;
                             break;
                         }
                     }
@@ -5947,19 +5936,22 @@ function updateLiveClockEngine() {
                 }
             }
 
+            // 1. Check if before first class
             if (currentMinutes < 480) {
                 headline.innerHTML = "🌅 Morning — Classes Start at 8:00 AM";
-                subtext.innerText = `First lecture for Div ${division} (${group}) begins at 8:00 AM.`;
+                subtext.innerText = `First lecture for Div ${division} (${group}): Minor Course at 8:00 AM.`;
                 return;
             }
 
-            if (currentMinutes >= 1080) {
-                headline.innerHTML = "🌙 Evening — All Classes Completed Today";
+            // 2. Check if after last class
+            if (currentMinutes > 1090) {
+                headline.innerHTML = "🏁 Checkered Flag — All Classes Completed";
                 subtext.innerText = "No more lectures scheduled for today. Have a great evening!";
                 if (nextContainer) nextContainer.style.display = "none";
                 return;
             }
 
+            // 3. Find active slot right now
             let activeMatch = null;
             for (let range of timeRanges) {
                 if (currentMinutes >= range.start && currentMinutes < range.end) {
@@ -5969,25 +5961,37 @@ function updateLiveClockEngine() {
             }
 
             if (activeMatch) {
+                if (activeMatch.isBreak) {
+                    headline.innerHTML = "🛠️ Quick Pit Stop";
+                    subtext.innerText = `15-minute tire swap & cooling period! Classes resume shortly at ${activeMatch.end === 670 ? '11:10 AM' : '4:15 PM'}.`;
+                    return;
+                }
+
+                if (activeMatch.isLunch) {
+                    headline.innerHTML = "🍔 High-Octane Refuel";
+                    subtext.innerText = "Lunch Break at Flo's V8 Café! Next class starts at 2:10 PM.";
+                    return;
+                }
+
                 let cellData = activeSchedule[todayName] ? activeSchedule[todayName][activeMatch.slot] : null;
 
                 if (cellData === "ELECTIVE") {
                     const electiveSchedKey = `${todayName}_${activeMatch.slot}`;
-                    const electiveDetails = electiveSchedules[electiveKey] ? electiveSchedules[electiveKey][electiveSchedKey] : null;
+                    const electiveDetails = electiveSchedules[electiveKey][electiveSchedKey];
                     cellData = {
                         title: activeElectiveName,
-                        code: electiveInfo[electiveKey] ? electiveInfo[electiveKey].code : "",
+                        code: electiveInfo[electiveKey].code,
                         room: electiveDetails ? electiveDetails.room : "—",
                         prof: electiveDetails ? electiveDetails.prof : "—"
                     };
                 }
 
-                if (cellData && typeof cellData === 'object') {
+                if (cellData) {
                     const fullSubject = subjectFullNames[cellData.title] || cellData.title;
                     const fullProf = profFullNames[cellData.prof] || cellData.prof || "—";
                     headline.innerHTML = `🟢 NOW: ${fullSubject}`;
-                    subtext.innerText = `Room ${cellData.room || '—'} · ${fullProf} (${activeMatch.label})`;
 
+                    // ✨ Live Class Progress Tube Bar — fills 0→100% during active class
                     const progContainer = document.getElementById("live-progress-container");
                     const progFill = document.getElementById("live-progress-fill");
                     const progText = document.getElementById("live-progress-text");
@@ -6000,7 +6004,7 @@ function updateLiveClockEngine() {
                         progFill.style.width = pct + "%";
                         progText.innerText = `${pct}% Complete (${remainingMins}m left)`;
                     }
-
+                    subtext.innerText = `Room ${cellData.room || '—'} · ${fullProf} (${activeMatch.label})`;
                     return;
                 } else {
                     headline.innerHTML = "📖 Free Study Slot";
@@ -6011,9 +6015,9 @@ function updateLiveClockEngine() {
 
             headline.innerHTML = "⏱️ Passing Time / Between Slots";
             subtext.innerText = `Next slot starting soon for Division ${division} Group ${group}.`;
-}
+        }
 
-// 1. Render Mobile Timeline Cards
+        // 1. Render Mobile Timeline Cards
         function renderMobileCards() {
             const container = document.getElementById("mobile-cards-view");
             container.innerHTML = "";
