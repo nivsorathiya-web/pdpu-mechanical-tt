@@ -15,7 +15,13 @@
                 }
             } catch (e) {}
         })();
-    </script>
+    
+        // ⚡ Pre-cache Lightning McQueen photo into browser memory instantly
+        (function preloadMcQueenImage() {
+            const img = new Image();
+            img.src = "Lightning McQueen.jpeg";
+        })();
+</script>
 
     <title>Timetable</title>
     
@@ -1646,7 +1652,37 @@
             }
         }
 
-    </style>
+    
+        /* ⚡ Instant & Ultra-Smooth Lightning McQueen Animation */
+        @keyframes smoothMcQueenFade {
+            0% {
+                opacity: 0;
+                transform: scale(0.95) translateY(8px);
+                filter: blur(6px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+                filter: blur(0);
+            }
+        }
+        @keyframes mcQueenGlowPulse {
+            0%, 100% {
+                box-shadow: 0 8px 30px -5px rgba(220, 38, 38, 0.4), 0 0 20px rgba(245, 158, 11, 0.2);
+            }
+            50% {
+                box-shadow: 0 12px 40px 0px rgba(220, 38, 38, 0.65), 0 0 35px rgba(245, 158, 11, 0.5);
+            }
+        }
+        .mcqueen-hero-card {
+            animation: mcQueenGlowPulse 3s infinite ease-in-out !important;
+        }
+        .mcqueen-img-animated {
+            animation: smoothMcQueenFade 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+            will-change: transform, opacity, filter;
+        }
+</style>
+    <link rel="preload" href="Lightning McQueen.jpeg" as="image" fetchpriority="high">
 </head>
 <body>
 
@@ -6091,7 +6127,7 @@ function updateLiveClockEngine() {
                     <div class="mobile-card mcqueen-hero-card" style="background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%); border: 2px solid #dc2626; border-radius: 16px; padding: 1.25rem; color: #ffffff; box-shadow: 0 10px 25px -5px rgba(220, 38, 38, 0.3); position: relative; overflow: hidden; margin-bottom: 1rem;">
                         <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem;">
                             <div style="position: relative; width: 100%; max-width: 320px; border-radius: 12px; overflow: hidden; border: 2px solid #f59e0b; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);">
-                                <img src="Lightning McQueen.jpeg" alt="Lightning McQueen" style="width: 100%; height: auto; display: block; object-fit: cover;">
+                                <img src="Lightning McQueen.jpeg" alt="Lightning McQueen" loading="eager" decoding="async" fetchpriority="high" class="mcqueen-img-animated" style="width: 100%; height: auto; display: block; object-fit: cover;">
                                 <div style="position: absolute; top: 8px; right: 8px; background: #dc2626; color: #ffffff; font-weight: 900; font-size: 0.75rem; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; border: 1px solid #f59e0b;">
                                     ⚡ #95 Rust-eze
                                 </div>
