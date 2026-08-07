@@ -5852,6 +5852,31 @@ function updateLiveClockEngine() {
             const liveDate = document.getElementById("live-date-str");
             const headline = document.getElementById("live-headline");
             const subtext = document.getElementById("live-subtext");
+            const greetingElem = document.getElementById("live-greeting");
+            if (greetingElem) {
+                const hrs = now.getHours();
+                let greetText = "GOOD MORNING";
+                if (hrs >= 12 && hrs < 17) greetText = "GOOD AFTERNOON";
+                else if (hrs >= 17 && hrs < 22) greetText = "GOOD EVENING";
+                else if (hrs >= 22 || hrs < 5) greetText = "GOOD NIGHT";
+
+                let firstName = "";
+                try {
+                    if (window.loggedInStudent && window.loggedInStudent.name) {
+                        firstName = getFirstName(window.loggedInStudent.name).toUpperCase();
+                    } else if (window.loggedInStudent && window.loggedInStudent.roll) {
+                        const found = studentDatabase.find(s => s.roll.toUpperCase() === window.loggedInStudent.roll.toUpperCase());
+                        if (found) firstName = getFirstName(found.name).toUpperCase();
+                    }
+                } catch(e) {}
+
+                if (firstName) {
+                    greetingElem.innerText = `${greetText}, ${firstName}!`;
+                } else {
+                    greetingElem.innerText = `${greetText}!`;
+                }
+            }
+
             const nextContainer = document.getElementById("live-next-container");
 
             if (liveClock) {
